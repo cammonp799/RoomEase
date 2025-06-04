@@ -6,7 +6,7 @@ Penser à faire pour init :
 
 
 ```bash
-ng install --legacy-peer-deps
+npm install --legacy-peer-deps
 ```
 
 ## Development server
