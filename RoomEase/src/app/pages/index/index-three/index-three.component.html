@@ -1,0 +1,102 @@
+<app-nav-light/>
+
+<div class="image-cover hero-banner" style="background:url(assets/img/bg-2.jpg) no-repeat;" data-overlay="6">
+    <div class="container">
+        <h1 class="big-header-capt mb-0">Find Your Property</h1>
+        <p class="text-center mb-5">From as low as $10 per day with limited time offer</p>
+        <div class="full-search-2 eclip-search italian-search hero-search-radius shadow mt-5">
+            <div class="hero-search-content">
+                <app-form-two/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-7 col-md-10 text-center">
+                <div class="sec-heading center">
+                    <h2>Find By Locations</h2>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
+                </div>
+            </div>
+        </div>
+        <app-best-loctions/>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center mt-5">
+                <a [routerLink]="'/listings-list-with-sidebar'" class="btn btn-primary px-md-5 rounded">Browse More Locations</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-7 col-md-10 text-center">
+                <div class="sec-heading center">
+                    <h2>Explore Good places</h2>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
+                </div>
+            </div>
+        </div>
+        <app-grid-one/>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center mt-5">
+                <a [routerLink]="['/listings-list-with-sidebar']" class="btn btn-primary px-md-5 rounded">Browse More Properties</a>
+            </div>
+        </div>
+    </div>	
+</section>
+
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-7 col-md-10 text-center">
+                <div class="sec-heading center">
+                    <h2>How It Works?</h2>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
+                </div>
+            </div>
+        </div>
+        <app-how-its-work/>
+    </div>
+</section>
+
+<div class="clearfix"></div>
+
+<section class="image-cover" style="background:url(assets/img/banner-2.jpg) no-repeat;" data-overlay="4">
+    <div class="ht-80"></div>
+    <div class="container position-relative z-1">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-8">
+                <div class="caption-wrap-content text-center">
+                    <h2 class="fs-1">Search Perfect Place in your City</h2>
+                    <p class="mb-5">We post regulary most powerful articles for help and support.</p>
+                    <a [routerLink]="[]" class="btn btn-whites fw-medium rounded">Explore More Property</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ht-80"></div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-10 text-center">
+                <div class="sec-heading center">
+                    <h2>Latest Updates By Resido</h2>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
+                </div>
+            </div>
+        </div>
+        
+        <app-blog/>
+    </div>		
+</section>
+
+<app-footer-top [bg]="'theme-bg'"/>
+
+<app-footer/>

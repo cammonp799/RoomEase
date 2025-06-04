@@ -1,0 +1,15 @@
+<div class="row justify-content-center g-4">
+    <div *ngFor="let item of workData" class="col-lg-4 col-md-4">
+        <div class="middle-icon-features-item">
+            <div [ngClass]="{'icon-features-wrap' : item.id < 3}">
+                <div class="middle-icon-large-features-box" [ngClass]="item.bg">
+                    <img [src]="item.image" alt="">
+                </div>
+            </div>
+            <div class="middle-icon-features-content">
+                <h4>{{item.title}}</h4>
+                <p>{{item.desc}}</p>
+            </div>
+        </div>
+    </div>
+</div>

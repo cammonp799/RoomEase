@@ -1,0 +1,17 @@
+<div class="row justify-content-center g-4">
+    <div *ngFor="let item of blogData.slice(0,3)" class="col-xl-4 col-lg-4 col-md-6">
+        <div class="blog-wrap-grid h-100 shadow">
+            <div class="blog-thumb">
+                <a [routerLink]="['/blog-detail',item.id]"><img [src]="item.image" class="img-fluid" alt="" /></a>
+            </div>
+            <div class="blog-info">
+                <span class="post-date label bg-seegreen text-light"><i class="ti ti-calendar"></i>{{item.date}}</span>
+            </div>
+            <div class="blog-body">
+                <h4 class="bl-title"><a [routerLink]="['/blog-detail',item.id]">{{item.title}}</a></h4>
+                <p>{{item.desc}} </p>
+                <a [routerLink]="['/blog-detail',item.id]" class="text-primary fw-medium">Continue<i class="fa-solid fa-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </div>
+</div>

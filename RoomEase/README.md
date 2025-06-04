@@ -2,6 +2,13 @@
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.12.
 
+Penser à faire pour init :
+
+
+```bash
+ng install --legacy-peer-deps
+```
+
 ## Development server
 
 To start a local development server, run:

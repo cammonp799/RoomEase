@@ -1,0 +1,168 @@
+<app-navbar/>
+<div class="image-cover page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <h2 class="ipt-title">Agent Detail</h2>
+                <span class="ipn-subtitle">Adam D. Okraar From Canada</span>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="agent-page p-0 gray-simple">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="agency agency-list overlio-40">
+                
+                    <div class="agency-avatar">
+                        <img [src]="'assets/img/ag-1.png'" alt="">
+                    </div>
+                    
+                    <div class="agency-content">
+                        <div class="agency-name">
+                            <h4><a [routerLink]="'/agency-page'">Strive Partners Realty</a></h4>
+                            <span><i class="lni-map-marker"></i>3599 Huntz Lane</span>
+                        </div>
+                        
+                        <div class="agency-desc">
+                        <p>Most text editors like MS Word or Lotus Notes generate random lorem text when needed, either as pre-installed module or plug-in to be added. Word selection or sequence don't necessarily match the original, which is intended to add variety. Presentation software like Keynote.</p>
+                        </div>
+                        
+                        <div class="prt-detios mb-3">
+                            <span class="label text-light bg-success">176 Property</span>
+                        </div>
+                        
+                        <ul class="social-icons">
+                            <li><a class="facebook" [routerLink]="[]"><i class="fa-brands fa-facebook"></i></a></li>
+                            <li><a class="twitter" [routerLink]="[]"><i class="fa-brands fa-twitter"></i></a></li>
+                            <li><a class="linkedin" [routerLink]="[]"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a class="linkedin" [routerLink]="[]"><i class="fa-brands fa-linkedin"></i></a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12 col-sm-12">
+                <div class="block-wrap">
+                    <div class="block-header ags">
+                        <h4 class="block-title">Agency Info</h4>
+                        <a [routerLink]="'/add-agent'" class="btn btn-seegreen">Add New Agent</a>
+                    </div>
+                    
+                    <div class="block-body">
+                        <ul class="dw-proprty-info">
+                            <li><strong>Ceo</strong>Mr. Adam Vilawo</li>
+                            <li><strong>Email</strong>Isvali&#64;gmail.com</li>
+                            <li><strong>Phone</strong>+91 235 658 4758</li>
+                            <li><strong>Skype</strong>isva24lia</li>
+                            <li><strong>Address</strong>320, Near Iswar</li>
+                            <li><strong>City</strong>New York</li>
+                            <li><strong>Country</strong>United State</li>
+                            <li><strong>Stab.</strong>2007</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="block-wraps">
+                    <div class="block-wraps-header">
+                        <div class="block-header">
+                            <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                              <li class="nav-item" role="presentation">
+                                <a class="nav-link px-4 active" id="agent-tab" data-bs-toggle="pill" href="#agent" role="tab" aria-controls="agent" aria-selected="true">Agents</a>
+                              </li>
+                              <li class="nav-item" role="presentation">
+                                <a class="nav-link px-4" id="property-tab" data-bs-toggle="pill" href="#property" role="tab" aria-controls="property" aria-selected="false">Property</a>
+                              </li>
+                            </ul>
+                        </div>
+                    
+                        <div class="block-body">
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="agent" role="tabpanel" aria-labelledby="agent-tab">
+                                    <div class="row justify-content-center g-4">
+                                        <div *ngFor="let item of agentData.slice(0,6)" class="col-lg-6 col-md-6 col-sm-12">
+                                            <div class="agents-grid card rounded-3 border">
+                                                
+                                                <div class="agents-grid-wrap">
+                                                    <div class="fr-grid-thumb mx-auto text-center mt-5 mb-3">
+                                                        <a [routerLink]="['/agent-page', item.id]" class="d-inline-flex p-1 circle border">
+                                                            <img [src]="item.image" class="img-fluid circle" width="130" alt="" />
+                                                        </a>
+                                                    </div>
+                                                    <div class="fr-grid-deatil text-center">
+                                                        <div class="fr-grid-deatil-flex">
+                                                            <h5 class="fr-can-name mb-0"><a [routerLink]="['/agent-page', item.id]">{{item.name}}</a></h5>
+                                                            <span class="agent-property text-muted-2">{{item.property}}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="fr-grid-info d-flex align-items-center justify-content-between px-4 py-4">
+                                                    <div class="fr-grid-sder">
+                                                        <ul class="p-0">
+                                                            <li><strong>Call:</strong><span class="fw-medium text-primary ms-2">{{item.call}}</span></li>
+                                                            <li>
+                                                                <div class="fr-can-rating">
+                                                                    <i class="fas fa-star fs-xs text-warning me-1"></i>
+                                                                    <i class="fas fa-star fs-xs text-warning me-1"></i>
+                                                                    <i class="fas fa-star fs-xs text-warning me-1"></i>
+                                                                    <i class="fas fa-star fs-xs text-warning me-1"></i>
+                                                                    <i class="fas fa-star fs-xs text-muted me-1"></i>
+                                                                    <span class="reviews_text fs-sm text-muted-2">({{item.review}})</span>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="fr-grid-deatil-flex-right">
+                                                        <div class="agent-email"><a [routerLink]="[]" class="square--50 rounded text-danger bg-light-danger"><i class="fa-solid fa-envelope-circle-check"></i></a></div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 text-center mt-5">
+                                            <a [routerLink]="[]" class="btn btn-primary px-lg-5 rounded">Explore More Agents</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="tab-pane fade" id="property" role="tabpanel" aria-labelledby="sale-tab">
+                                    <div class="row justify-content-center g-4">
+                                        <div *ngFor="let item of propertyData.slice(0,6)" class="col-lg-6 col-md-6 col-sm-12">
+                                            <app-grid-layout [item]="item" [border]="true"/>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row align-items-center justify-content-center">
+                                        <div class="col-lg-12 col-md-12 col-sm-12 text-center mt-5">
+                                            <a [routerLink]="[]" class="btn btn-primary px-md-5 rounded">Browse More Properties</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- property Sidebar -->
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <app-property-sidebar [agent]="true"/>
+            </div>
+        </div>					
+    </div>	
+</section>
+
+<app-footer-top [bg]="'theme-bg'"/>
+<app-footer/>

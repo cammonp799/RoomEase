@@ -1,0 +1,65 @@
+<app-full-navbar/>
+
+<div class="home-map-banner half-map">
+				
+    <app-map-two/>
+    
+    <div class="fs-inner-container">
+        <div class="fs-content">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="sty_1523">
+                        <div class="_mp_filter center mb-3">
+                            <div class="_mp_filter_first">
+                                <div class="filter_list_item">
+                                    <div class="selected_item_wrap">
+                                        <div class="slt_single_item"><a [routerLink]="[]" class="remove_pills"><span class="pills_tex">2 Beds</span><span class="remove_cross"></span></a></div>
+                                        <div class="slt_single_item"><a [routerLink]="[]" class="remove_pills"><span class="pills_tex">2 Baths</span><span class="remove_cross"></span></a></div>
+                                        <div class="slt_single_item"><a [routerLink]="[]" class="remove_pills"><span class="pills_tex">Garage</span><span class="remove_cross"></span></a></div>
+                                        <div class="slt_single_item"><a [routerLink]="[]" class="remove_pills"><span class="pills_tex">2 More</span></a></div>
+                                        <div class="slt_single_item"><a [routerLink]="[]" class="clear_pills"><span class="pills_clears">Clear All</span></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="_mp_filter_last">
+                                <a [routerLink]="[]" class="map_filter min" data-bs-toggle="modal" data-bs-target="#filter"><i class="fa fa-sliders-h mr-2"></i>Short Filter</a>
+                            </div>
+                        </div>
+                        <h6>54 Apartment Available</h6>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row justify-content-center list-layout g-4">
+                <div *ngFor="let item of propertyData" class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <app-list-two [item]="item" [border]="true"/>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <ul class="pagination p-center">
+                        <li class="page-item">
+                            <a class="page-link" [routerLink]="[]" aria-label="Previous">
+                                <i class="fa-solid fa-arrow-left-long"></i>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" [routerLink]="[]">1</a></li>
+                        <li class="page-item"><a class="page-link" [routerLink]="[]">2</a></li>
+                        <li class="page-item active"><a class="page-link" [routerLink]="[]">3</a></li>
+                        <li class="page-item"><a class="page-link" [routerLink]="[]">...</a></li>
+                        <li class="page-item"><a class="page-link" [routerLink]="[]">18</a></li>
+                        <li class="page-item">
+                            <a class="page-link" [routerLink]="[]" aria-label="Next">
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>

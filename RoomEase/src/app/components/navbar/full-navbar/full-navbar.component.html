@@ -1,0 +1,338 @@
+<div class="header head-border" [ngClass]="{'header-fixed': scroll, 'header-transparent dark': transparent,'header-light head-shadow': !transparent}">
+    <div class="container-fluid">
+        <nav id="navigation" class="navigation" [ngClass]="windowWidth > 991 ? 'navigation navigation-landscape' : 'navigation navigation-portrait'">
+            <div class="nav-header">
+                <a class="nav-brand text-logo d-flex" [routerLink]="[]">
+                    <img [src]="'/assets/img/logo.svg'" alt="">
+                    <h5 class="fs-3 fw-bold ms-1 my-0">Resido</h5>
+                </a>
+                <div class="nav-toggle" (click)="toggle = !toggle"></div>
+                <div class="mobile_nav">
+                    <ul>
+                        <li>
+                            <a [routerLink]="[]" data-bs-toggle="modal" data-bs-target="#login" class="text-dark opacity-75">
+                                <img [src]="['/assets/img/svg/users.svg']" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/submit-property']" class="text-primary">
+                                <img [src]="'/assets/img/svg/add.svg'" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="[]" class="text-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                               <img [src]="'/assets/img/svg/bar.svg'" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nav-menus-wrapper nav-menus-wrapper-open" [ngClass]="{ 'nav-menus-wrapper-open': toggle}" [ngStyle]="{'transition-property': toggle ? 'none' : 'left'}">
+                <span class="nav-menus-wrapper-close-button" (click)="toggle = !toggle">✕</span>
+                <ul class="nav-menu">
+                    <li  [ngClass]="{'active': ['/','/home-2','/home-3','/home-4','/home-5','/home-6','/home-7','/home-8','/home-9','/home-10','/home-11','/video','/map'].includes(current),'show': activeMenu['index-page'] && activeMenu['index-page']['main']}" (mouseenter)="handleMouseEnter('index-page')" (mouseleave)="handleMouseLeave('index-page')">
+                        <a [routerLink]="[]" >Home<span class="submenu-indicator"><span class='submenu-indicator-chevron'></span></span></a>
+                        <ul class="nav-dropdown nav-submenu" [ngStyle]="{display: activeMenu['index-page'] && activeMenu['index-page']['main'] ? 'block' : 'none', pointerEvents: activeMenu['index-page'] && activeMenu['index-page']['main'] ? 'auto' : 'none'}">
+                            <li><a [routerLink]="['/']" [ngClass]="{ 'active': current === '/' }">Home Layout 1</a></li>
+                            <li><a [routerLink]="['/home-2']" [ngClass]="{ 'active': current === '/home-2' }">Home Layout 2</a></li>
+                            <li><a [routerLink]="['/home-3']" [ngClass]="{ 'active': current === '/home-3' }">Home Layout 3</a></li>
+                            <li><a [routerLink]="['/home-4']" [ngClass]="{ 'active': current === '/home-4' }">Home Layout 4</a></li>
+                            <li><a [routerLink]="['/home-5']" [ngClass]="{ 'active': current === '/home-5' }">Home Layout 5</a></li>
+                            <li><a [routerLink]="['/home-6']" [ngClass]="{ 'active': current === '/home-6' }">Home Layout 6</a></li>
+                            <li><a [routerLink]="['/home-7']" [ngClass]="{ 'active': current === '/home-7' }">Home Layout 7</a></li>
+                            <li><a [routerLink]="['/home-8']" [ngClass]="{ 'active': current === '/home-8' }">Home Layout 8</a></li>
+                            <li><a [routerLink]="['/home-9']" [ngClass]="{ 'active': current === '/home-9' }">Home Layout 9</a></li>
+                            <li><a [routerLink]="['/home-10']" [ngClass]="{ 'active': current === '/home-10' }">Home Layout 10</a></li>
+                            <li><a [routerLink]="['/home-11']" [ngClass]="{ 'active': current === '/home-11' }">Home Layout 11</a></li>
+                            <li><a [routerLink]="['/video']" [ngClass]="{ 'active': current === '/video' }">Video Home</a></li>
+                            <li><a [routerLink]="['/map']" [ngClass]="{ 'active': current === '/map' }">Map Home Layout</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li [ngClass]="{'active': ['/list-layout-new','/list-layout-new-3','/list-layout-new-2','/list-layout-with-map','/list-layout-full','/grid-layout-with-sidebar','/classical-layout-with-sidebar','/grid-layout-with-map','/grid','/classical-property','/list-layout-with-map','/grid-layout-with-map','/classical-layout-with-map','/half-map','/half-map-2'].includes(current),'show': activeMenu['listing-page'] && activeMenu['listing-page']['main']}" (mouseenter)="handleMouseEnter('listing-page')" (mouseleave)="handleMouseLeave('listing-page')"><a [routerLink]="[]">Listings<span class="submenu-indicator"><span class='submenu-indicator-chevron'></span></span></a>
+                        <ul class="nav-dropdown nav-submenu" [ngStyle]="{display: activeMenu['listing-page'] && activeMenu['listing-page']['main'] ? 'block' : 'none', pointerEvents: activeMenu['listing-page'] && activeMenu['listing-page']['main'] ? 'auto' : 'none'}">
+                            <li [ngClass]="{'active': ['/list-layout-new','/list-layout-new-3','/list-layout-new-2','/list-layout-with-map','/list-layout-full'].includes(current),'show': activeMenu['list-page'] && activeMenu['list-page']['main']}" (mouseenter)="handleMouseEnter('list-page')" (mouseleave)="handleMouseLeave('list-page')"><a [routerLink]="[]">List Layout<span class="submenu-indicator"><span class='submenu-indicator-chevron'></span></span></a>
+                                <ul class="nav-dropdown nav-submenu" [ngStyle]="{display: activeMenu['list-page'] && activeMenu['list-page']['main'] ? 'block' : 'none', pointerEvents: activeMenu['list-page'] && activeMenu['list-page']['main'] ? 'auto' : 'none'}">
+                                    <li><a [routerLink]="['/list-layout-new']" [ngClass]="{ 'active': current === '/list-layout-new' }">List Layout Simple</a></li>
+                                    <li><a [routerLink]="['/list-layout-new-3']" [ngClass]="{ 'active': current === '/list-layout-new-3' }">List Layout Modern</a></li>                                    
+                                    <li><a [routerLink]="['/list-layout-new-2']" [ngClass]="{ 'active': current === '/list-layout-new-2' }">List Layout Advance</a></li>                                    
+                                    <li><a [routerLink]="['/list-layout-with-map']" [ngClass]="{ 'active': current === '/list-layout-with-map' }">With Map</a></li>                                    
+                                    <li><a [routerLink]="['/list-layout-full']" [ngClass]="{ 'active': current === '/list-layout-full' }">Full Width</a></li>
+                                </ul>
+                            </li>
+                            <li [ngClass]="{'active': ['/grid-layout-with-sidebar','/classical-layout-with-sidebar','/grid-layout-with-map','/grid','/classical-property'].includes(current),'show': activeMenu['grid-page'] && activeMenu['grid-page']['main']}" (mouseenter)="handleMouseEnter('grid-page')" (mouseleave)="handleMouseLeave('grid-page')"><a [routerLink]="[]">Grid Layout<span class="submenu-indicator"><span class='submenu-indicator-chevron'></span></span></a>
+                                <ul class="nav-dropdown nav-submenu" [ngStyle]="{display: activeMenu['grid-page'] && activeMenu['grid-page']['main'] ? 'block' : 'none', pointerEvents: activeMenu['grid-page'] && activeMenu['grid-page']['main'] ? 'auto' : 'none'}">
+                                    <li><a [routerLink]="['/grid-layout-with-sidebar']" [ngClass]="{ 'active': current === '/grid-layout-with-sidebar' }">With Sidebar</a></li>                                    
+                                    <li><a [routerLink]="['/classical-layout-with-sidebar']" [ngClass]="{ 'active': current === '/classical-layout-with-sidebar' }">Classical With Sidebar</a></li>                                    
+                                    <li><a [routerLink]="['/grid-layout-with-map']" [ngClass]="{ 'active': current === '/grid-layout-with-map' }">With Map</a></li>                                    
+                                    <li><a [routerLink]="['/grid']" [ngClass]="{ 'active': current === '/grid' }">Full Width</a></li>
+                                    <li><a [routerLink]="['/classical-property']" [ngClass]="{ 'active': current === '/classical-property' }">Classical Full Width</a></li>	 
+                                </ul>
+                            </li>
+                            <li [ngClass]="{'active': ['/list-layout-with-map','/grid-layout-with-map','/classical-layout-with-map','/half-map','/half-map-2'].includes(current),'show': activeMenu['map-page'] && activeMenu['map-page']['main']}" (mouseenter)="handleMouseEnter('map-page')" (mouseleave)="handleMouseLeave('map-page')"><a [routerLink]="[]">With Map Property<span class="submenu-indicator"><span class='submenu-indicator-chevron'></span></span></a>
+                                <ul class="nav-dropdown nav-submenu" [ngStyle]="{display: activeMenu['map-page'] && activeMenu['map-page']['main'] ? 'block' : 'none', pointerEvents: activeMenu['map-page'] && activeMenu['map-page']['main'] ? 'auto' : 'none'}">
+                                    <li><a [routerLink]="['/list-layout-with-map']" [ngClass]="{ 'active': current === '/list-layout-with-map' }">List With Map</a></li>                                    
+                                    <li><a [routerLink]="['/grid-layout-with-map']" [ngClass]="{ 'active': current === '/grid-layout-with-map' }">Grid With Map</a></li>                                    
+                                    <li><a [routerLink]="['/classical-layout-with-map']" [ngClass]="{ 'active': current === '/classical-layout-with-map' }">Classical With Map</a></li>                                    
+                                    <li><a [routerLink]="['/half-map']" [ngClass]="{ 'active': current === '/half-map' }">Half Map Search</a></li>
+                                    <li><a [routerLink]="['/half-map-2']" [ngClass]="{ 'active': current === '/half-map-2' }">Half Map Search 02</a></li>												
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li [ngClass]="{'active': ['/single-property-1','/single-property-2','/single-property-3','/single-property-4','/agencies','/agency-page','/agents','/agent-page','/add-agent','/edit-agent','/dashboard','/payment','/my-profile','/my-property','/bookmark-list','/change-password','/compare-property','/submit-property'].includes(current),'show': activeMenu['feature-page'] && activeMenu['feature-page']['main']}" (mouseenter)="handleMouseEnter('feature-page')" (mouseleave)="handleMouseLeave('feature-page')"><a [routerLink]="[]">Features<span class="submenu-indicator"><span class='submenu-indicator-chevron'></span></span></a>
+                        <ul class="nav-dropdown nav-submenu" [ngStyle]="{display: activeMenu['feature-page'] && activeMenu['feature-page']['main'] ? 'block' : 'none', pointerEvents: activeMenu['feature-page'] && activeMenu['feature-page']['main'] ? 'auto' : 'none'}">
+                            <li [ngClass]="{'active': ['/single-property-1','/single-property-2','/single-property-3','/single-property-4'].includes(current),'show': activeMenu['detail-page'] && activeMenu['detail-page']['main']}" (mouseenter)="handleMouseEnter('detail-page')" (mouseleave)="handleMouseLeave('detail-page')"><a [routerLink]="[]">Single Property<span class="submenu-indicator"><span class='submenu-indicator-chevron'></span></span></a>
+                                <ul class="nav-dropdown nav-submenu" [ngStyle]="{display: activeMenu['detail-page'] && activeMenu['detail-page']['main'] ? 'block' : 'none', pointerEvents: activeMenu['detail-page'] && activeMenu['detail-page']['main'] ? 'auto' : 'none'}">
+                                    <li><a [routerLink]="['/single-property-1']" [ngClass]="{ 'active': current === '/single-property-1' }">Single Property 1</a></li>                                    
+                                    <li><a [routerLink]="['/single-property-2']" [ngClass]="{ 'active': current === '/single-property-2' }">Single Property 2</a></li>                                    
+                                    <li><a [routerLink]="['/single-property-3']" [ngClass]="{ 'active': current === '/single-property-3' }">Single Property 3</a></li> 
+                                    <li><a [routerLink]="['/single-property-4']" [ngClass]="{ 'active': current === '/single-property-4' }">Single Property 4</a></li> 												
+                                </ul>
+                            </li>
+                            <li [ngClass]="{'active': ['/agents','/agent-page','/add-agent','/edit-agent'].includes(current),'show': activeMenu['agent-page'] && activeMenu['agent-page']['main']}" (mouseenter)="handleMouseEnter('agent-page')" (mouseleave)="handleMouseLeave('agent-page')"><a [routerLink]="[]">Agents<span class="submenu-indicator"><span class='submenu-indicator-chevron'></span></span></a>
+                                <ul class="nav-dropdown nav-submenu" [ngStyle]="{display: activeMenu['agent-page'] && activeMenu['agent-page']['main'] ? 'block' : 'none', pointerEvents: activeMenu['agent-page'] && activeMenu['agent-page']['main'] ? 'auto' : 'none'}">
+                                    <li><a [routerLink]="['/agents']" [ngClass]="{ 'active': current === '/agents' }">Agents List</a></li>                                    
+                                    <li><a [routerLink]="['/agent-page']" [ngClass]="{ 'active': current === '/agent-page' }">Agent Page</a></li>   
+                                    <li><a [routerLink]="['/add-agent']" [ngClass]="{ 'active': current === '/add-agent' }">Add Agent</a></li>   
+                                    <li><a [routerLink]="['/edit-agent']" [ngClass]="{ 'active': current === '/edit-agent' }">Edit Agent</a></li>   
+                                </ul>
+                            </li>
+                            <li [ngClass]="{'active': ['/agencies','/agency-page'].includes(current),'show': activeMenu['agencies-page'] && activeMenu['agencies-page']['main']}" (mouseenter)="handleMouseEnter('agencies-page')" (mouseleave)="handleMouseLeave('agencies-page')"><a [routerLink]="[]">Agencies<span class="submenu-indicator"><span class='submenu-indicator-chevron'></span></span></a>
+                                <ul class="nav-dropdown nav-submenu" [ngStyle]="{display: activeMenu['agencies-page'] && activeMenu['agencies-page']['main'] ? 'block' : 'none', pointerEvents: activeMenu['agencies-page'] && activeMenu['agencies-page']['main'] ? 'auto' : 'none'}">                                 
+                                    <li><a [routerLink]="['/agencies']" [ngClass]="{ 'active': current === '/agencies' }">Agencies List</a></li>                                    
+                                    <li><a [routerLink]="['/agency-page']" [ngClass]="{ 'active': current === '/agency-page' }">Agency Page</a></li> 
+                                </ul>
+                            </li>
+                            <li [ngClass]="{'active': ['/dashboard','/payment','/my-profile','/my-property','/bookmark-list','/change-password'].includes(current),'show': activeMenu['user-page'] && activeMenu['user-page']['main']}" (mouseenter)="handleMouseEnter('user-page')" (mouseleave)="handleMouseLeave('user-page')"><a [routerLink]="[]">My Account<span class="submenu-indicator"><span class='submenu-indicator-chevron'></span></span></a>
+                                <ul class="nav-dropdown nav-submenu" [ngStyle]="{display: activeMenu['user-page'] && activeMenu['user-page']['main'] ? 'block' : 'none', pointerEvents: activeMenu['user-page'] && activeMenu['user-page']['main'] ? 'auto' : 'none'}">
+                                    <li><a [routerLink]="['/dashboard']" [ngClass]="{ 'active': current === '/dashboard' }">User Dashboard</a></li>
+                                    <li><a [routerLink]="['/payment']" [ngClass]="{ 'active': current === '/payment' }">Payment Confirmation</a></li>
+                                    <li><a [routerLink]="['/my-profile']" [ngClass]="{ 'active': current === '/my-profile' }">My Profile</a></li>                                    
+                                    <li><a [routerLink]="['/my-property']" [ngClass]="{ 'active': current === '/my-property' }">Property List</a></li>                                    
+                                    <li><a [routerLink]="['/bookmark-list']" [ngClass]="{ 'active': current === '/bookmark-list' }">Bookmarked Listings</a></li>                                    
+                                    <li><a [routerLink]="['/change-password']" [ngClass]="{ 'active': current === '/change-password' }">Change Password</a></li> 
+                                </ul>
+                            </li>
+                            <li>
+                                <a [routerLink]="['/compare-property']" [ngClass]="{ 'active': current === '/compare-property' }">Compare Property</a>                                
+                            </li>
+                            <li>
+                                <a [routerLink]="['/submit-property']" [ngClass]="{ 'active': current === '/submit-property' }">Submit Property</a>                                
+                            </li>
+                        </ul>
+                    </li> 
+                    
+                    <li [ngClass]="{'active': ['/blog','/about-us','/blog-detail','/component','/pricing','/faq','/404','/contact','/create-account','/checkout'].includes(current),'show': activeMenu['blog-page'] && activeMenu['blog-page']['main']}" (mouseenter)="handleMouseEnter('blog-page')" (mouseleave)="handleMouseLeave('blog-page')"><a [routerLink]="[]" >Pages<span class="submenu-indicator" ></span></a>
+                        <ul class="nav-dropdown nav-submenu" [ngStyle]="{display: activeMenu['blog-page'] && activeMenu['blog-page']['main'] ? 'block' : 'none', pointerEvents: activeMenu['blog-page'] && activeMenu['blog-page']['main'] ? 'auto' : 'none'}" >
+                            <li><a [routerLink]="['/about-us']" [ngClass]="{ 'active': current === '/about-us' }">About us</a></li> 
+                            <li><a [routerLink]="['/blog']" [ngClass]="{ 'active': current === '/blog' }">Blogs Page</a></li>                                    
+                            <li><a [routerLink]="['/blog-detail']" [ngClass]="{ 'active': current === '/blog-detail' }">Blog Detail</a></li>                                    
+                            <li><a [routerLink]="['/component']" [ngClass]="{ 'active': current === '/component' }">Shortcodes</a></li> 
+                            <li><a [routerLink]="['/pricing']" [ngClass]="{ 'active': current === '/pricing' }">Pricing</a></li>
+                            <li><a [routerLink]="['/faq']" [ngClass]="{ 'active': current === '/faq' }">Faq</a></li>   
+                            <li><a [routerLink]="['/create-account']" [ngClass]="{ 'active': current === '/create-account' }">Create Account</a></li> 
+                            <li><a [routerLink]="['/checkout']" [ngClass]="{ 'active': current === '/checkout' }">Checkout</a></li> 
+                            <li><a [routerLink]="['/404']" [ngClass]="{ 'active': current === '/404' }">Error Page</a></li>
+                            <li><a [routerLink]="['/contact']" [ngClass]="{ 'active': current === '/contact' }">Contacts</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <ul class="nav-menu nav-menu-social align-to-right">
+                    
+                    <li>
+                        <a [routerLink]="[]" data-bs-toggle="modal" data-bs-target="#login" class="fw-medium text-muted-2">
+                            <span class="svg-icon svg-icon-2hx me-1">
+                                <svg width="22" height="22" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.3" d="M16.5 9C16.5 13.125 13.125 16.5 9 16.5C4.875 16.5 1.5 13.125 1.5 9C1.5 4.875 4.875 1.5 9 1.5C13.125 1.5 16.5 4.875 16.5 9Z" fill="currentColor"/>
+                                    <path d="M9 16.5C10.95 16.5 12.75 15.75 14.025 14.55C13.425 12.675 11.4 11.25 9 11.25C6.6 11.25 4.57499 12.675 3.97499 14.55C5.24999 15.75 7.05 16.5 9 16.5Z" fill="currentColor"/>
+                                    <rect x="7" y="6" width="4" height="4" rx="2" fill="currentColor"/>
+                                </svg>
+                            </span>
+                            SignUp or SignIn
+                        </a>
+                    </li>
+                    <li class="add-listing">
+                        <a [routerLink]="['/submit-property']" class="bg-primary">
+                            <span class="svg-icon svg-icon-muted svg-icon-2hx me-1">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect opacity="0.3" width="12" height="2" rx="1" transform="matrix(-1 0 0 1 15.5 11)" fill="currentColor"/>
+                                    <path d="M13.6313 11.6927L11.8756 10.2297C11.4054 9.83785 11.3732 9.12683 11.806 8.69401C12.1957 8.3043 12.8216 8.28591 13.2336 8.65206L16.1592 11.2526C16.6067 11.6504 16.6067 12.3496 16.1592 12.7474L13.2336 15.3479C12.8216 15.7141 12.1957 15.6957 11.806 15.306C11.3732 14.8732 11.4054 14.1621 11.8756 13.7703L13.6313 12.3073C13.8232 12.1474 13.8232 11.8526 13.6313 11.6927Z" fill="currentColor"/>
+                                    <path d="M8 5V6C8 6.55228 8.44772 7 9 7C9.55228 7 10 6.55228 10 6C10 5.44772 10.4477 5 11 5H18C18.5523 5 19 5.44772 19 6V18C19 18.5523 18.5523 19 18 19H11C10.4477 19 10 18.5523 10 18C10 17.4477 9.55228 17 9 17C8.44772 17 8 17.4477 8 18V19C8 20.1046 8.89543 21 10 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3H10C8.89543 3 8 3.89543 8 5Z" fill="currentColor"/>
+                                </svg>
+                            </span>Post Property
+                        </a>
+                    </li>
+                    <li>
+                        <a [routerLink]="[]" class="text-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                            <span class="svg-icon svg-icon-2hx">
+                                <svg width="24" height="24" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect y="6" width="16" height="3" rx="1.5" fill="currentColor"/>
+                                    <rect opacity="0.3" y="12" width="8" height="3" rx="1.5" fill="currentColor"/>
+                                    <rect opacity="0.3" width="12" height="3" rx="1.5" fill="currentColor"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="registermodal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered login-pop-form" role="document">
+        <div class="modal-content" id="registermodal">
+            <span class="mod-close" data-bs-dismiss="modal" aria-hidden="true">
+                <span class="svg-icon text-primary svg-icon-2hx">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
+                        <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor"/>
+                        <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor"/>
+                    </svg>
+                </span>
+            </span>
+            <div class="modal-body">
+                <h4 class="modal-header-title">Log In</h4>
+                <div class="d-flex align-items-center justify-content-center mb-3">
+                    <span class="svg-icon text-primary svg-icon-2hx">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.8797 15.375C15.9797 15.075 15.9797 14.775 15.9797 14.475C15.9797 13.775 15.7797 13.075 15.4797 12.475C14.7797 11.275 13.4797 10.475 11.9797 10.475C11.7797 10.475 11.5797 10.475 11.3797 10.575C7.37971 11.075 4.67971 14.575 2.57971 18.075L10.8797 3.675C11.3797 2.775 12.5797 2.775 13.0797 3.675C13.1797 3.875 13.2797 3.975 13.3797 4.175C15.2797 7.575 16.9797 11.675 15.8797 15.375Z" fill="currentColor"/>
+                            <path opacity="0.3" d="M20.6797 20.6749C16.7797 20.6749 12.3797 20.275 9.57972 17.575C10.2797 18.075 11.0797 18.375 11.9797 18.375C13.4797 18.375 14.7797 17.5749 15.4797 16.2749C15.6797 15.9749 15.7797 15.675 15.7797 15.375V15.2749C16.8797 11.5749 15.2797 7.47495 13.2797 4.07495L21.6797 18.6749C22.2797 19.5749 21.6797 20.6749 20.6797 20.6749ZM8.67972 18.6749C8.17972 17.8749 7.97972 16.975 7.77972 15.975C7.37972 13.575 8.67972 10.775 11.3797 10.375C7.37972 10.875 4.67972 14.375 2.57972 17.875C2.47972 18.075 2.27972 18.375 2.17972 18.575C1.67972 19.475 2.27972 20.475 3.27972 20.475H10.3797C9.67972 20.175 9.07972 19.3749 8.67972 18.6749Z" fill="currentColor"/>
+                        </svg>
+                    </span>
+                </div>
+                <div class="login-form">
+                    <form>
+                    
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" placeholder="name@example.com">
+                            <label>Email address</label>
+                        </div>
+                        
+                        <div class="form-floating mb-3">
+                          <input type="password" class="form-control" placeholder="Password">
+                          <label>Password</label>
+                        </div>
+                        
+                        <div class="form-group mb-3">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="flex-shrink-0 flex-first">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="save-pass" value="option1">
+                                        <label class="form-check-label" for="save-pass">Save Password</label>
+                                    </div>	
+                                </div>
+                                <div class="flex-shrink-0 flex-first">
+                                    <a [routerLink]="[]" class="link fw-medium">Forgot Password?</a>	
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="button" class="btn btn-lg btn-primary fw-medium full-width rounded-2">LogIn</button>
+                        </div>
+                    
+                    </form>
+                </div>
+                <div class="modal-divider"><span>Or login via </span></div>
+                <div class="social-login mb-3">
+                    <ul>
+                        <li><a [routerLink]="[]" class="btn connect-fb"><i class="ti ti-facebook"></i>Facebook</a></li>
+                        <li><a [routerLink]="[]" class="btn connect-google"><i class="ti ti-google"></i>Google+</a></li>
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <p class="mt-4">Have't Any Account? <a [routerLink]="['/create-account']" class="link fw-medium">Acreate An Account</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Compare & Selected Property</h5>
+        <a [routerLink]="[]" data-bs-dismiss="offcanvas" aria-label="Close">
+            <span class="svg-icon text-primary svg-icon-2hx">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
+                    <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor"/>
+                    <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor"/>
+                </svg>
+            </span>
+        </a>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="nav nav-pills sider_tab mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-compare-tab" data-bs-toggle="pill" data-bs-target="#pills-compare" type="button" role="tab" aria-controls="pills-compare" aria-selected="true">Compare Property</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-saved-tab" data-bs-toggle="pill" data-bs-target="#pills-saved" type="button" role="tab" aria-controls="pills-saved" aria-selected="false">Saved Property</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-compare" role="tabpanel" aria-labelledby="pills-compare-tab" tabindex="0">
+                <div class="sidebar_featured_property">
+                            
+                    <div *ngFor="let item of data1" class="sides_list_property p-2">
+                        <div class="sides_list_property_thumb">
+                            <img [src]="item.image" class="img-fluid" alt="">
+                        </div>
+                        <div class="sides_list_property_detail">
+                            <h4><a [routerLink]="['/single-property-1']">{{item.name}}</a></h4>
+                            <span class="text-muted-2"><i class="fa-solid fa-location-dot"></i>{{item.loction}}</span>
+                            <div class="lists_property_price">
+                                <div class="lists_property_types">
+                                    <div *ngIf="item.type === 'For Sale'" class="property_types_vlix sale">For Sale</div>
+                                    <div *ngIf="item.type === 'For Rent'" class="property_types_vlix">For Rent</div>
+                                    <div *ngIf="item.type === 'For Buy'" class="property_types_vlix buy">For Buy</div>
+                                </div>
+                                <div class="lists_property_price_value">
+                                    <h4 class="text-primary">{{item.value}}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <a [routerLink]="['/compare-property']" class="btn btn-light-primary fw-medium full-width">View & Compare</a>
+                    </div>
+                </div>	
+            </div>
+            <div class="tab-pane fade" id="pills-saved" role="tabpanel" aria-labelledby="pills-saved-tab" tabindex="0">
+                <div class="sidebar_featured_property">
+                            
+                    <div *ngFor="let item of data2" class="sides_list_property p-2">
+                        <div class="sides_list_property_thumb">
+                            <img [src]="item.image" class="img-fluid" alt="">
+                        </div>
+                        <div class="sides_list_property_detail">
+                            <h4><a [routerLink]="['/single-property-1']">{{item.name}}</a></h4>
+                            <span class="text-muted-2"><i class="fa-solid fa-location-dot"></i>{{item.loction}}</span>
+                            <div class="lists_property_price">
+                                <div class="lists_property_types">
+                                    <div *ngIf="item.type === 'For Sale'" class="property_types_vlix sale">For Sale</div>
+                                    <div *ngIf="item.type === 'For Rent'" class="property_types_vlix">For Rent</div>
+                                    <div *ngIf="item.type === 'For Buy'" class="property_types_vlix buy">For Buy</div>
+                                </div>
+                                <div class="lists_property_price_value">
+                                    <h4 class="text-primary">{{item.value}}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <a [routerLink]="[]" class="btn btn-light-primary fw-medium full-width">View & Compare</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

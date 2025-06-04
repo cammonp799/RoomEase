@@ -1,0 +1,18 @@
+<div class="row align-items-center justify-content-center g-lg-4 g-md-3 g-4">
+    <div *ngFor="let item of pricingData" class="col-xl-4 col-lg-4 col-md-4">
+        <div class="pricing-wrap py-3 px-3">
+            <div class="pricing-header" [ngClass]="item.bg">
+                <h4 class="pr-value text-light"><sup class="text-light opacity-75">$</sup>{{item.value}}</h4>
+                <h4 class="pr-title" [ngClass]="item.titleText">{{item.title}}</h4>
+            </div>
+            <div class="pricing-body px-2">
+                <ul class="p-0">
+                    <li *ngFor="let el of item.feature"><span class="text-success me-2"><i class="fa-solid fa-circle-check"></i></span>{{el}}</li>
+                </ul>
+            </div>
+            <div class="pricing-bottom mt-5 mb-1 px-2">
+                <a [routerLink]="[]" [ngClass]="item.btn">Choose Plan</a>
+            </div>
+        </div>
+    </div>
+</div>

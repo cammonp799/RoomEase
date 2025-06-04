@@ -1,0 +1,40 @@
+<app-navbar/>
+<app-detail-slider/>
+
+<section class="gray-simple">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12 col-sm-12">
+                <div class="property_block_wrap style-2 p-4">
+                    <div class="prt-detail-title-desc">
+                        <span class="label text-light bg-success">For Sale</span>
+                        <h3>{{data?.name ? data?.name : 'Jannat Graynight Mood In Siver Colony, London'}}</h3>
+                        <span><i class="lni-map-marker"></i> 778 Country St. Panama City, FL</span>
+                        <h3 class="prt-price-fix text-primary">$7,600<sub>/month</sub></h3>
+                        <div class="list-fx-features">
+                            <div class="listing-card-info-icon">
+                                <div class="inc-fleat-icon me-1"><img [src]="'assets/img/bed.svg'" width="13" alt=""></div>3 Beds
+                            </div>
+                            <div class="listing-card-info-icon">
+                                <div class="inc-fleat-icon me-1"><img [src]="'assets/img/bathtub.svg'" width="13" alt=""></div>1 Bath
+                            </div>
+                            <div class="listing-card-info-icon">
+                                <div class="inc-fleat-icon me-1"><img [src]="'assets/img/move.svg'" width="13" alt=""></div>800 sqft
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <app-property-detail/>
+            </div>
+            
+            <div class="col-lg-4 col-md-12 col-sm-12">
+               <app-property-sidebar-two/>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<app-footer-top [bg]="'theme-bg'"/>
+
+<app-footer/>

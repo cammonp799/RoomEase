@@ -1,0 +1,157 @@
+<div class="simple-sidebar sm-sidebar" [ngClass]="show ? 'd-block' : 'd-lg-block d-none' " id="filter_search"  style="left:0;">							
+    <div class="search-sidebar_header">
+        <h4 class="ssh_heading">Close Filter</h4>
+        <button (click)="show = !show" class="w3-bar-item w3-button w3-large"><i class="fa-regular fa-circle-xmark fs-5 text-muted-2"></i></button>
+    </div>
+    
+    <div class="sidebar-widgets">
+        <div class="sidebar-widgets">
+            <div class="form-group simple">
+                <div class="input-with-icon">
+                    <input type="text" class="form-control" placeholder="Neighborhood">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            
+            <div class="form-group simple">
+                <div class="input-with-icon">
+                    <input type="text" class="form-control" placeholder="Location">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+            </div>
+            
+            <div class="form-group simple border rounded">
+                <div class="simple-input">
+                    <select2 [data]="type" placeholder="Show All" class="form-control border-0"></select2>
+                </div>
+            </div>
+            
+            <div class="form-group simple border rounded">
+                <div class="simple-input">
+                    <select2 [data]="status" placeholder="Select Status" class="form-control border-0"></select2>
+                </div>
+            </div>
+            
+            <div class="form-group simple border rounded">
+                <div class="simple-input">
+                    <select2 [data]="minprice" placeholder="No Min" class="form-control border-0"></select2>
+                </div>
+            </div>
+            
+            <div class="form-group simple border rounded">
+                <div class="simple-input">
+                    <select2 [data]="bedrooms" placeholder="Bedrooms" class="form-control border-0"></select2>
+                </div>
+            </div>
+            
+            <div class="form-group simple border rounded">
+                <div class="simple-input">
+                    <select2 [data]="bedrooms" placeholder="Bathrooms" class="form-control border-0"></select2>
+                </div>
+            </div>
+            
+            <div class="form-group simple border rounded">
+                <div class="simple-input">
+                    <select2 [data]="garage" placeholder="Choose Rooms" class="form-control border-0"></select2>
+                </div>
+            </div>
+            
+            <div class="form-group simple border rounded">
+                <div class="simple-input">
+                    <select2 [data]="built" placeholder="Year Built" class="form-control border-0"></select2>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="form-group">
+                        <div class="simple-input">
+                            <input type="text" class="form-control ps-2" placeholder="Min Area">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="form-group">
+                        <div class="simple-input">
+                            <input type="text" class="form-control ps-2" placeholder="Max Area">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 pt-4 pb-4">
+                    <h6>Choose Price</h6>
+                    <div class="rg-slider">
+                        <ngx-slider class="js-range-slider" [(value)]="value" [(highValue)]="highValue" [options]="options"></ngx-slider>
+                    </div>
+                </div>
+            </div>									
+
+            <div class="ameneties-features">
+                <div class="form-group" id="module">
+                    <a role="button" class="" data-bs-toggle="collapse" href="#advance-search" aria-expanded="true" aria-controls="advance-search"></a>
+                </div>
+                <div class="collapse" id="advance-search" aria-expanded="false" role="banner">
+                    <ul class="no-ul-list">
+                        <li>
+                            <div class="form-check">
+                                <input id="a-1" class="form-check-input" name="a-1" type="checkbox">
+                                <label for="a-1" class="form-check-label">Air Condition</label>
+                            </div>	
+                        </li>
+                        <li>
+                            <div class="form-check">
+                                <input id="a-2" class="form-check-input" name="a-2" type="checkbox">
+                                <label for="a-2" class="form-check-label">Bedding</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-check">
+                                <input id="a-3" class="form-check-input" name="a-3" type="checkbox">
+                                <label for="a-3" class="form-check-label">Heating</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-check">
+                                <input id="a-4" class="form-check-input" name="a-4" type="checkbox">
+                                <label for="a-4" class="form-check-label">Internet</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-check">
+                                <input id="a-5" class="form-check-input" name="a-5" type="checkbox">
+                                <label for="a-5" class="form-check-label">Microwave</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-check">
+                                <input id="a-6" class="form-check-input" name="a-6" type="checkbox">
+                                <label for="a-6" class="form-check-label">Smoking Allow</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-check">
+                                <input id="a-7" class="form-check-input" name="a-7" type="checkbox">
+                                <label for="a-7" class="form-check-label">Terrace</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-check">
+                                <input id="a-8" class="form-check-input" name="a-8" type="checkbox">
+                                <label for="a-8" class="form-check-label">Balcony</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-check">
+                                <input id="a-9" class="form-check-input" name="a-9" type="checkbox">
+                                <label for="a-9" class="form-check-label">Icon</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <button class="btn btn-primary fw-medium rounded full-width">Find New Home</button>
+            </div>
+        </div>							
+    </div>
+</div>

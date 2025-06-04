@@ -1,0 +1,135 @@
+<app-nav-light/>
+
+<div class="image-bottom hero-banner" style="background:#2540a2 url(assets/img/new-banner.jpg) no-repeat;" data-overlay="7">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 col-md-11 col-sm-12">
+                <div class="inner-banner-text text-center">
+                    <p class="lead-i">Amet consectetur adipisicing <span class="badge badge-success">New</span></p>
+                    <h2><span class="font-normal">Find Your</span> Perfect Place.</h2>
+                </div>
+                <app-form-three/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-10 text-center">
+                <div class="sec-heading center">
+                    <h2>Explore Properties in Best Places</h2>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 g-4">
+            <div *ngFor="let item of explorePlace" class="col">
+                <div class="position-relative">
+                    <a [routerLink]="'/grid-layout-with-sidebar'" class="d-flex align-items-center justify-content-start border rounded-pill p-2">
+                        <div class="explod-thumb flex-shrink-0"><img [src]="item.image" class="img-fluid circle" width="65" alt=""></div>
+                        <div class="explod-caps ps-3">
+                            <h5 class="fs-5 fw-medium mb-0">{{item.loction}}</h5>
+                            <p class="text-muted-2 fs-sm m-0">{{item.property}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>	
+</section>
+<hr class="opacity-25">
+
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-10 text-center">
+                <div class="sec-heading center">
+                    <h2>Recent Property For Rent</h2>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
+                </div>
+            </div>
+        </div>
+        <app-property-slide/>
+    </div>
+</section>
+
+<section class="bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-10 text-center">
+                <div class="sec-heading center">
+                    <h2>Featured Property For Sale</h2>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
+                </div>
+            </div>
+        </div>
+    
+        <app-property-sale/>
+                
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center mt-4">
+                <a [routerLink]="'/listings-list-with-sidebar'" class="btn btn-primary px-lg-5 rounded">Browse More Properties</a>
+            </div>
+        </div>
+    </div>		
+</section>
+
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-10 text-center">
+                <div class="sec-heading center">
+                    <h2>Explore Featured Agents</h2>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
+                </div>
+            </div>
+        </div>
+
+        <app-team-one/>
+        
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center mt-5">
+                <a [routerLink]="'/listings-list-with-sidebar'" class="btn btn-primary px-lg-5 rounded">Explore More Agents</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="clearfix"></div>
+
+<section class="gray-bg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-10 text-center">
+                <div class="sec-heading center">
+                    <h2>Good Reviews by Customers</h2>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
+                </div>
+            </div>
+        </div>
+        <app-client/>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-10 text-center">
+                <div class="sec-heading center">
+                    <h2>See our packages</h2>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
+                </div>
+            </div>
+        </div>
+        <app-pricing/>
+    </div>	
+</section>
+
+<app-download-app/>
+
+<app-footer-top [bg]="'theme-bg'"/>
+
+<app-footer/>

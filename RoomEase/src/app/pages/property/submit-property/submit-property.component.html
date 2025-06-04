@@ -1,0 +1,403 @@
+<app-navbar/>
+<div class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <h2 class="ipt-title">Submit Property</h2>
+                <span class="ipn-subtitle">Just Submit Your Property</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="gray-simple">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="alert bg-success text-light text-center" role="alert">Hi Dear, Have you already an account? <a [routerLink]="[]" class="text-warning" data-bs-toggle="collapse" data-bs-target="#login-frm">Please Login</a></div>
+            </div>
+            <div class="col-lg-12 col-md-12">	
+                <div id="login-frm" class="collapse mb-5">
+                    <div class="row">
+                        <div class="col-lg-5 col-md-4 col-sm-6">
+                            <div class="form-group">
+                                <div class="input-with-icons">
+                                    <input type="text" class="form-control ps-2" placeholder="Username">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-5 col-md-4 col-sm-6">
+                            <div class="form-group">
+                                <div class="input-with-icons">
+                                    <input type="text" class="form-control ps-2" placeholder="*******">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-2 col-md-4 col-sm-12">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary full-width">Submit</button>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="exclop-wrap d-flex align-items-center justify-content-between">
+                                <div class="exclop">
+                                    <input id="a-1" class="form-check-input" name="a-1" type="checkbox">
+                                    <label for="a-1" class="form-check-label ms-2">Remember Me</label>
+                                </div>
+                                <div class="exclop-last">
+                                    <a href="#" class="fw-medium text-primary">Forget Password?</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            
+            <div class="col-lg-12 col-md-12">
+                <div class="submit-page">
+                    <div class="form-submit">	
+                        <h3>Basic Information</h3>
+                        <div class="submit-section">
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label class="mb-2">Property Title<span class="tip-topdata" data-tip="Property Title"><i class="fa-solid fa-info"></i></span></label>
+                                    <input type="text" class="form-control ps-2">
+                                </div>
+                                
+                                <div class="form-group col-md-6">
+                                    <label class="mb-2">Status</label>
+                                    <select2 [data]="status" placeholder="Select Status" class="form-control border ps-2"></select2>
+                                </div>
+                                
+                                <div class="form-group col-md-6">
+                                    <label class="mb-2">Property Type</label>
+                                    <select2 [data]="ptypes" placeholder="Show All" class="form-control border ps-2"></select2>
+                                </div>
+                                
+                                <div class="form-group col-md-6">
+                                    <label class="mb-2">Price</label>
+                                    <input type="text" class="form-control ps-2" placeholder="USD">
+                                </div>
+                                
+                                <div class="form-group col-md-6">
+                                    <label class="mb-2">Area</label>
+                                    <input type="text" class="form-control ps-2">
+                                </div>
+                                
+                                <div class="form-group col-md-6">
+                                    <label class="mb-2">Bedrooms</label>
+                                    <select2 [data]="rooms" placeholder="Bedrooms" class="form-control border ps-2"></select2>
+                                </div>
+                                
+                                <div class="form-group col-md-6">
+                                    <label class="mb-2">Bathrooms</label>
+                                    <select2 [data]="rooms" placeholder="Bathrooms" class="form-control border ps-2"></select2>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-submit">	
+                        <h3>Gallery</h3>
+                        <div class="submit-page">
+                            <div class="form-submit middle-logo">	
+                                <h3>Profile Logo</h3>
+                                <div class="submit-section">
+                                    <div class="form-row position-relative">
+                                        <div class='position-absolute w-100 h-100 top-0 bottom-0'>
+                                            <input type="file"  (change)="handleChange($event)" style="width: 100%; height: 100%; opacity: 0;"/>
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <form class="dropzone profile-logo dz-clickable primary-dropzone">
+                                                <div *ngIf="file" class='dz-image'>
+                                                    <img [src]="file" clas='object-fit-cover' alt='' style="width: 120px; height: 120px; border-radius: 15px;"/>
+                                                </div>
+                                                <div *ngIf="!file" class="dz-default dz-message">
+                                                    <i class="fa-solid fa-images"></i>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-submit">	
+                                <h3>Basic Information</h3>
+                                <div class="submit-section">
+                                    <div class="row">
+                                    
+                                        <div class="form-group col-md-12">
+                                            <label class="mb-1">Full Name<span class="tip-topdata" data-tip="Property Title"><i class="fa-solid fa-info"></i></span></label>
+                                            <input type="text" class="form-control ps-2">
+                                        </div>
+                                        
+                                        <div class="form-group col-md-6">
+                                            <label class="mb-1">Designation</label>
+                                            <input type="text" class="form-control ps-2">
+                                        </div>
+                                        
+                                        <div class="form-group col-md-6">
+                                            <label class="mb-1">Phone</label>
+                                            <input type="text" class="form-control ps-2">
+                                        </div>
+                                        
+                                        <div class="form-group col-md-6">
+                                            <label class="mb-1">Email</label>
+                                            <input type="text" class="form-control ps-2">
+                                        </div>
+                                        
+                                        <div class="form-group col-md-6">
+                                            <label class="mb-1">Landline</label>
+                                            <input type="text" class="form-control ps-2">
+                                        </div>
+                                        
+                                        <div class="form-group col-md-12">
+                                            <label class="mb-1">Description</label>
+                                            <textarea class="form-control h-120 ps-2"></textarea>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-submit">	
+                                <h3>Location</h3>
+                                <div class="submit-section">
+                                    <div class="row">
+                                        <div class="form-group col-md-6">
+                                            <label class="mb-1">Address</label>
+                                            <input type="text" class="form-control ps-2">
+                                        </div>
+                                        
+                                        <div class="form-group col-md-6">
+                                            <label class="mb-1">Address 2</label>
+                                            <input type="text" class="form-control ps-2">
+                                        </div>
+                                        
+                                        <div class="form-group col-md-6">
+                                            <label class="mb-1">Country</label>
+                                            <input type="text" class="form-control ps-2">
+                                        </div>
+                                        
+                                        <div class="form-group col-md-6">
+                                            <label class="mb-1">State</label>
+                                            <input type="text" class="form-control ps-2">
+                                        </div>
+                                        
+                                        <div class="form-group col-md-6">
+                                            <label class="mb-1">City</label>
+                                            <input type="text" class="form-control ps-2">
+                                        </div>
+                                        
+                                        <div class="form-group col-md-6">
+                                            <label class="mb-1">Zip Code</label>
+                                            <input type="text" class="form-control ps-2">
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-submit">	
+                                <h3>Social Accounts</h3>
+                                <div class="submit-section">
+                                    <div class="row">
+                                        <div class="form-group col-md-4">
+                                            <label class="mb-1">Facebook</label>
+                                            <input type="text" class="form-control ps-2">
+                                        </div>
+                                        
+                                        <div class="form-group col-md-4">
+                                            <label class="mb-1">Twitter</label>
+                                            <input type="text" class="form-control ps-2">
+                                        </div>
+                                        
+                                        <div class="form-group col-md-4">
+                                            <label class="mb-1">Linkedin</label>
+                                            <input type="text" class="form-control ps-2">
+                                        </div>
+                                        
+                                        <div class="form-group col-md-4">
+                                            <label class="mb-1">Google Plus</label>
+                                            <input type="text" class="form-control ps-2">
+                                        </div>
+                                        
+                                        <div class="form-group col-md-4">
+                                            <label class="mb-1">Instagram</label>
+                                            <input type="text" class="form-control ps-2">
+                                        </div>
+                                        
+                                        <div class="form-group col-md-4">
+                                            <label class="mb-1">Tumbler</label>
+                                            <input type="text" class="form-control ps-2">
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-lg-12 col-md-12">
+                                <label>GDPR Agreement *</label>
+                                <ul class="no-ul-list">
+                                    <li class="form-check">
+                                        <input id="aj-1" class="form-check-input" name="aj-1" type="checkbox">
+                                        <label for="aj-1" class="form-check-label">I consent to having this website store my submitted information so they can respond to my inquiry.</label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="form-group col-lg-12 col-md-12">
+                                <button class="btn btn-primary px-5 rounded" type="submit">Submit & Preview</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-submit">	
+                        <h3>Location</h3>
+                        <div class="submit-section">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label class="mb-2">Address</label>
+                                    <input type="text" class="form-control ps-2">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="mb-2">City</label>
+                                    <input type="text" class="form-control ps-2">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="mb-2">State</label>
+                                    <input type="text" class="form-control ps-2">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="mb-2">Zip Code</label>
+                                    <input type="text" class="form-control ps-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-submit">	
+                        <h3>Detailed Information</h3>
+                        <div class="submit-section">
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label class="mb-2">Description</label>
+                                    <textarea class="form-control h-120 ps-2"></textarea>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label class="mb-2">Building Age (optional)</label>
+                                    <select2 [data]="ages" placeholder="Select An Option" class="form-control border ps-2"></select2>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label class="mb-2">Garage (optional)</label>
+                                    <select2 [data]="rooms" placeholder="Choose Rooms" class="form-control border ps-2"></select2>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label class="mb-2">Rooms (optional)</label>
+                                    <select2 [data]="rooms" placeholder="Choose Rooms" class="form-control border ps-2"></select2>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label class="mb-2">Other Features (optional)</label>
+                                    <div class="o-features">
+                                        <ul class="no-ul-list third-row">
+                                            <li>
+                                                <input id="a-1" class="form-check-input" name="a-1" type="checkbox">
+                                                <label for="a-1" class="form-check-label ms-2">Air Condition</label>
+                                            </li>
+                                            <li>
+                                                <input id="a-2" class="form-check-input" name="a-2" type="checkbox">
+                                                <label for="a-2" class="form-check-label ms-2">Bedding</label>
+                                            </li>
+                                            <li>
+                                                <input id="a-3" class="form-check-input" name="a-3" type="checkbox">
+                                                <label for="a-3" class="form-check-label ms-2">Heating</label>
+                                            </li>
+                                            <li>
+                                                <input id="a-4" class="form-check-input" name="a-4" type="checkbox">
+                                                <label for="a-4" class="form-check-label ms-2">Internet</label>
+                                            </li>
+                                            <li>
+                                                <input id="a-5" class="form-check-input" name="a-5" type="checkbox">
+                                                <label for="a-5" class="form-check-label ms-2">Microwave</label>
+                                            </li>
+                                            <li>
+                                                <input id="a-6" class="form-check-input" name="a-6" type="checkbox">
+                                                <label for="a-6" class="form-check-label ms-2">Smoking Allow</label>
+                                            </li>
+                                            <li>
+                                                <input id="a-7" class="form-check-input" name="a-7" type="checkbox">
+                                                <label for="a-7" class="form-check-label ms-2">Terrace</label>
+                                            </li>
+                                            <li>
+                                                <input id="a-8" class="form-check-input" name="a-8" type="checkbox">
+                                                <label for="a-8" class="form-check-label ms-2">Balcony</label>
+                                            </li>
+                                            <li>
+                                                <input id="a-9" class="form-check-input" name="a-9" type="checkbox">
+                                                <label for="a-9" class="form-check-label ms-2">Icon</label>
+                                            </li>
+                                            <li>
+                                                <input id="a-10" class="form-check-input" name="a-10" type="checkbox">
+                                                <label for="a-10" class="form-check-label ms-2">Wi-Fi</label>
+                                            </li>
+                                            <li>
+                                                <input id="a-11" class="form-check-input" name="a-11" type="checkbox">
+                                                <label for="a-11" class="form-check-label ms-2">Beach</label>
+                                            </li>
+                                            <li>
+                                                <input id="a-12" class="form-check-input" name="a-12" type="checkbox">
+                                                <label for="a-12" class="form-check-label ms-2">Parking</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-submit">	
+                        <h3>Contact Information</h3>
+                        <div class="submit-section">
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <label class="mb-2">Name</label>
+                                    <input type="text" class="form-control ps-2">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label class="mb-2">Email</label>
+                                    <input type="text" class="form-control ps-2">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label class="mb-2">Phone (optional)</label>
+                                    <input type="text" class="form-control ps-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-12 col-md-12">
+                        <label>GDPR Agreement *</label>
+                        <ul class="no-ul-list">
+                            <li>
+                                <input id="aj-1" class="form-check-input" name="aj-1" type="checkbox">
+                                <label for="aj-1" class="form-check-label ms-2">I consent to having this website store my submitted information so they can respond to my inquiry.</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form-group col-lg-12 col-md-12">
+                        <button class="btn btn-primary fw-medium px-5" type="button">Submit & Preview</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer-top [bg]="'theme-bg'"/>
+
+<app-footer/>

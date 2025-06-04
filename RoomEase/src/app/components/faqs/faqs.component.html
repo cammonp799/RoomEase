@@ -1,0 +1,15 @@
+<div *ngFor="let item of data" class="card mb-2">
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-link" [ngClass]="item.id === activeTab ? '' : 'collapsed'" type="button" (click)="activeTab = item.id">
+            {{item.title}}
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseOne" class="collapse" [ngClass]="item.id === activeTab ? 'show' : ''">
+      <div class="card-body">
+        <p class="ac-para">{{item.desc}}</p>
+      </div>
+    </div>
+</div>

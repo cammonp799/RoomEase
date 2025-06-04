@@ -1,0 +1,9 @@
+<div class="row">
+    <div class="col-lg-12 col-md-12">
+        <div class="property-slide btm">
+            <div *ngFor="let item of propertyData" class="single-items">
+                <app-grid-layout [item]="item" [border]="true"/>
+            </div>
+        </div>
+    </div>
+</div>

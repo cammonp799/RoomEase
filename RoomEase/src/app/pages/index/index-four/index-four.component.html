@@ -1,0 +1,207 @@
+<app-navbar/>
+
+<div class="image-bottom hero-banner bg-primary" style="background:url(assets/img/banner.svg) no-repeat;" data-overlay="0">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 col-md-11 col-sm-12">
+                <div class="inner-banner-text text-center mb-2">
+                    <h2 class="mb-4"><span class="font-normal">Ready. Set. Sold</span></h2>
+                    <p class="fs-5 fw-light px-xl-4 px-lg-4">Cicero famously orated against his political opponent Lucius Sergius Catilina. Occasionally the first Oration against Catiline is taken for type specimens</p>
+                </div>
+                <app-form-one/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section>
+    <div class="container">
+        <div class="row justify-content-start">
+            <div class="col-lg-7 col-md-10">
+                <div class="small-heads">
+                    <h2 class="fs-5 mb-0">Property For Rent</h2>
+                    <p>Recent Rent Properties</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-12 col-md-12">
+                <div class="floral-wraps">
+                    <div class="slide-livok top-arrow">
+                        <div *ngFor="let item of propertyData" class="single-slide">
+                            <app-grid-layout [item]="item" [border]="true" col4="true"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="clearfix"></div>
+
+<section class="pt-0">
+    <div class="container">
+        <div class="row justify-content-start">
+            <div class="col-lg-7 col-md-10">
+                <div class="small-heads">
+                    <h2 class="fs-5 mb-0">Properties For Sell</h2>
+                    <p>Best Properties For Sell</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-12 col-md-12">
+                <div class="floral-wraps">
+                    <div class="slide-livok top-arrow">
+                        <div *ngFor="let item of propertyData" class="single-slide">
+                            <app-grid-layout [item]="item" [border]="true" col4="true"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="clearfix"></div>
+
+<section class="pt-0">
+    <div class="container">
+        <div class="row justify-content-start">
+            <div class="col-lg-7 col-md-10">
+                <div class="small-heads">
+                    <h2 class="fs-5 mb-0">Explore Top Places</h2>
+                    <p>Best Places</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-12 col-md-12">
+                <div class="floral-wraps">
+                    <div class="slide-livok top-arrow">
+                        <div *ngFor="let item of explorePlace" class="single-slide mt-2">
+                            <app-explore-place [item]="item"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="clearfix"></div>
+
+<section class="pt-0">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12 col-md-12">
+                <div class="bg-primary rounded-4 py-md-5 px-md-5 p-4">
+                    <div class="row align-items-center justify-content-between py-5">
+                        <div class="col-xl-9 col-lg-8 col-md-7 my-2">
+                            <h2 class="fs-1 text-light lh-base">New Projects in United States</h2>
+                            <p class="text-light m-0">New projects, verified by our quality control teams.</p>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-5 my-2">
+                            <a [routerLink]="[]" class="btn btn-lg btn-whites full-width fw-medium">View New Projects</a>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="clearfix"></div>
+
+<section class="pt-0">
+    <div class="container">
+        <div class="row justify-content-start">
+            <div class="col-lg-7 col-md-10">
+                <div class="small-heads">
+                    <h2 class="fs-5 mb-0">Meet Top Agents</h2>
+                    <p>Top Agents</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-12 col-md-12">
+                <div class="floral-wraps">
+                    <div class="slide-livok top-arrow mt-2">
+                        <div *ngFor="let item of teamData" class="single-slide">
+                            <div class="agents-grid card rounded-3 border">
+                    
+                                <div class="agents-grid-wrap">
+                                    <div class="fr-grid-thumb mx-auto text-center mt-5 mb-3">
+                                        <a [routerLink]="'/agent-page'" class="d-inline-flex p-1 circle border">
+                                            <img [src]="item.image" class="img-fluid circle" width="130" alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="fr-grid-deatil text-center">
+                                        <div class="fr-grid-deatil-flex">
+                                            <h5 class="fr-can-name mb-0"><a [routerLink]="[]">{{item.name}}</a></h5>
+                                            <span class="agent-property text-muted-2">{{item.property}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="fr-grid-info d-flex align-items-center justify-content-between px-4 py-4">
+                                    <div class="fr-grid-sder">
+                                        <ul class="p-0">
+                                            <li><strong>Call:</strong><span class="fw-medium text-primary ms-2">{{item.call}}</span></li>
+                                            <li>
+                                                <div class="fr-can-rating">
+                                                    <i class="fas fa-star fs-xs text-warning"></i>
+                                                    <i class="fas fa-star fs-xs text-warning"></i>
+                                                    <i class="fas fa-star fs-xs text-warning"></i>
+                                                    <i class="fas fa-star fs-xs text-warning"></i>
+                                                    <i class="fas fa-star fs-xs text-muted"></i>
+                                                    <span class="reviews_text fs-sm text-muted-2">({{item.review}})</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="fr-grid-deatil-flex-right">
+                                        <div class="agent-email"><a [routerLink]="[]" class="square--50 rounded text-danger bg-light-danger"><i class="fa-solid fa-envelope-circle-check"></i></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="clearfix"></div>
+
+<section class="gray-bg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-10 text-center">
+                <div class="sec-heading center">
+                    <h2>Good Reviews by Customers</h2>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
+                </div>
+            </div>
+        </div>
+        <app-client/>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-10 text-center">
+                <div class="sec-heading center">
+                    <h2>See our packages</h2>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
+                </div>
+            </div>
+        </div>
+        <app-pricing/>
+    </div>	
+</section>
+
+<app-footer-top [bg]="'theme-bg'"/>
+
+<app-footer/>

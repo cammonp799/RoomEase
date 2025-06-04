@@ -1,0 +1,99 @@
+<app-navbar/>
+<div class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <h2 class="ipt-title">About Us</h2>
+                <span class="ipn-subtitle">Who we are & our mission</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6">
+                <img [src]="'assets/img/sb.png'" class="img-fluid" alt="" />
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="story-wrap explore-content">
+                    <h2>Our Story</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="gray-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="sec-heading center">
+                    <h2>Meet Our Team</h2>
+                    <p>Professional & Dedicated Team</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="team-slide item-slide">
+                    <div *ngFor="let item of teamData" class="single-team">
+                        <div class="team-grid">
+                            <div class="teamgrid-user">
+                                <img [src]="item.image" alt="" class="img-fluid" />
+                            </div>
+                            <div class="teamgrid-content">
+                                <h4>{{item.name}}</h4>
+                                <span>{{item.position}}</span>
+                            </div>
+                            <div class="teamgrid-social">
+                                <ul>
+                                    <li><a href="#" class="f-cl"><i class="fa-brands fa-facebook"></i></a></li>
+                                    <li><a href="#" class="t-cl"><i class="fa-brands fa-twitter"></i></a></li>
+                                    <li><a href="#" class="i-cl"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="#" class="l-cl"><i class="fa-brands fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="sec-heading center">
+                    <h2>Our Mission & Work Process</h2>
+                    <p>Professional & Dedicated Team</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6">
+                <div *ngFor="let item of aboutData" class="icon-mi-left">
+                    <i [ngClass]="item.icon"></i>
+                    <div class="icon-mi-left-content">
+                        <h4>{{item.title}}</h4>
+                        <p>{{item.desc}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <img [src]="'assets/img/vec-2.png'" class="img-fluid" alt="" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer-top [bg]="'theme-bg'"/>
+
+<app-footer/>

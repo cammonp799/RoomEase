@@ -1,0 +1,296 @@
+<app-admin-navbar/>
+
+<div class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <h2 class="ipt-title">Welcome!</h2>
+                <span class="ipn-subtitle">Welcome To Your Account</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="bg-light">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="filter_search_opt">
+                    <a [routerLink]="[]" (click)="show = !show" class="btn btn-dark full-width mb-4">Dashboard Navigation<i class="fa-solid fa-bars ms-2"></i></a>
+                </div>
+            </div>
+        </div>
+                    
+        <div class="row">
+            <div class="col-lg-3 col-md-12">
+                <app-admin-sidebar [show]="show"/>
+            </div>
+            
+            <div class="col-lg-9 col-md-12">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <h4>Your Current Package: <span class="pc-title text-primary">Gold Package</span></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="dashboard-stat widget-1">
+                            <div class="dashboard-stat-content"><h4 class="mb-2">607</h4> <span>Listings Included</span></div>
+                            <div class="dashboard-stat-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        </div>	
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="dashboard-stat widget-2">
+                            <div class="dashboard-stat-content"><h4 class="mb-2">102</h4> <span>Listings Remaining</span></div>
+                            <div class="dashboard-stat-icon"><i class="ti ti-pie-chart"></i></div>
+                        </div>	
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="dashboard-stat widget-3">
+                            <div class="dashboard-stat-content"><h4 class="mb-2">70</h4> <span>Featured Included</span></div>
+                            <div class="dashboard-stat-icon"><i class="ti ti-user"></i></div>
+                        </div>	
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="dashboard-stat widget-4">
+                            <div class="dashboard-stat-content"><h4 class="mb-2">30</h4> <span>Featured Remaining</span></div>
+                            <div class="dashboard-stat-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        </div>	
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="dashboard-stat widget-5">
+                            <div class="dashboard-stat-content"><h4 class="mb-2">Unlimited</h4> <span>Images / per listing</span></div>
+                            <div class="dashboard-stat-icon"><i class="ti ti-pie-chart"></i></div>
+                        </div>	
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="dashboard-stat widget-6">
+                            <div class="dashboard-stat-content"><h4 class="mb-2">2021-02-26</h4> <span>Ends On</span></div>
+                            <div class="dashboard-stat-icon"><i class="ti ti-user"></i></div>
+                        </div>	
+                    </div>
+                </div>
+                <div class="dashboard-wraper">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="submit-pages">
+                                <div class="form-submit">	
+                                    <h3>Basic Information</h3>
+                                    <div class="submit-section">
+                                        <div class="row">
+                                            <div class="form-group col-md-12">
+                                                <label class="mb-2">Property Title<span class="tip-topdata" data-tip="Property Title"><i class="fa-solid fa-info"></i></span></label>
+                                                <input type="text" class="form-control ps-2">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label class="mb-2">Status</label>
+                                                <select2 [data]="status" placeholder="Select Status" class="form-control border ps-2"></select2>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label class="mb-2">Property Type</label>
+                                                <select2 [data]="ptypes" placeholder="Show All" class="form-control border ps-2"></select2>
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label class="mb-2">Price</label>
+                                                <input type="text" class="form-control ps-2" placeholder="USD">
+                                            </div>
+                                            
+                                            <div class="form-group col-md-6">
+                                                <label class="mb-2">Area</label>
+                                                <input type="text" class="form-control ps-2">
+                                            </div>
+                                            
+                                            <div class="form-group col-md-6">
+                                                <label class="mb-2">Bedrooms</label>
+                                                <select2 [data]="rooms" placeholder="Bedrooms" class="form-control border ps-2"></select2>
+                                            </div>
+                                            
+                                            <div class="form-group col-md-6">
+                                                <label class="mb-2">Bathrooms</label>
+                                                <select2 [data]="rooms" placeholder="Bathrooms" class="form-control border ps-2"></select2>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Gallery -->
+                                <div class="form-submit">	
+                                    <h3>Gallery</h3>
+                                    <div class="submit-section">
+                                        <div class="row">
+                                        
+                                            <div class="form-group col-md-12">
+                                                <label class="mb-2">Upload Gallery</label>
+                                                <form action="/upload-target" class="dropzone dz-clickable primary-dropzone">
+                                                    <div class="dz-default dz-message">
+                                                        <i class="ti ti-gallery"></i>
+                                                        <span>Drag & Drop To Change Logo</span>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-submit">	
+                                    <h3>Location</h3>
+                                    <div class="submit-section">
+                                        <div class="row">
+                                        
+                                            <div class="form-group col-md-6">
+                                                <label class="mb-2">Address</label>
+                                                <input type="text" class="form-control ps-2">
+                                            </div>
+                                            
+                                            <div class="form-group col-md-6">
+                                                <label class="mb-2">City</label>
+                                                <input type="text" class="form-control ps-2">
+                                            </div>
+                                            
+                                            <div class="form-group col-md-6">
+                                                <label class="mb-2">State</label>
+                                                <input type="text" class="form-control ps-2">
+                                            </div>
+                                            
+                                            <div class="form-group col-md-6">
+                                                <label class="mb-2">Zip Code</label>
+                                                <input type="text" class="form-control ps-2">
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-submit">	
+                                    <h3>Detailed Information</h3>
+                                    <div class="submit-section">
+                                        <div class="row">
+                                        
+                                            <div class="form-group col-md-12">
+                                                <label class="mb-2">Description</label>
+                                                <textarea class="form-control h-120 ps-2 pt-3"></textarea>
+                                            </div>
+                                            
+                                            <div class="form-group col-md-4">
+                                                <label class="mb-2">Building Age (optional)</label>
+                                                <select2 [data]="bage" placeholder="Select An Option" class="form-control border ps-2"></select2>
+                                            </div>
+                                            
+                                            <div class="form-group col-md-4">
+                                                <label class="mb-2">Garage (optional)</label>
+                                                <select2 [data]="rooms" placeholder="Choose Rooms" class="form-control border ps-2"></select2>
+                                            </div>
+                                            
+                                            <div class="form-group col-md-4">
+                                                <label class="mb-2">Rooms (optional)</label>
+                                                <select2 [data]="rooms" placeholder="Choose Rooms" class="form-control border ps-2"></select2>
+                                            </div>
+                                            
+                                            <div class="form-group col-md-12">
+                                                <label class="mb-2">Other Features (optional)</label>
+                                                <div class="o-features">
+                                                    <ul class="no-ul-list third-row">
+                                                        <li>
+                                                            <input id="a-1" class="form-check-input" name="a-1" type="checkbox">
+                                                            <label for="a-1" class="form-check-label ms-2">Air Condition</label>
+                                                        </li>
+                                                        <li>
+                                                            <input id="a-2" class="form-check-input" name="a-2" type="checkbox">
+                                                            <label for="a-2" class="form-check-label ms-2">Bedding</label>
+                                                        </li>
+                                                        <li>
+                                                            <input id="a-3" class="form-check-input" name="a-3" type="checkbox">
+                                                            <label for="a-3" class="form-check-label ms-2">Heating</label>
+                                                        </li>
+                                                        <li>
+                                                            <input id="a-4" class="form-check-input" name="a-4" type="checkbox">
+                                                            <label for="a-4" class="form-check-label ms-2">Internet</label>
+                                                        </li>
+                                                        <li>
+                                                            <input id="a-5" class="form-check-input" name="a-5" type="checkbox">
+                                                            <label for="a-5" class="form-check-label ms-2">Microwave</label>
+                                                        </li>
+                                                        <li>
+                                                            <input id="a-6" class="form-check-input" name="a-6" type="checkbox">
+                                                            <label for="a-6" class="form-check-label ms-2">Smoking Allow</label>
+                                                        </li>
+                                                        <li>
+                                                            <input id="a-7" class="form-check-input" name="a-7" type="checkbox">
+                                                            <label for="a-7" class="form-check-label ms-2">Terrace</label>
+                                                        </li>
+                                                        <li>
+                                                            <input id="a-8" class="form-check-input" name="a-8" type="checkbox">
+                                                            <label for="a-8" class="form-check-label ms-2">Balcony</label>
+                                                        </li>
+                                                        <li>
+                                                            <input id="a-9" class="form-check-input" name="a-9" type="checkbox">
+                                                            <label for="a-9" class="form-check-label ms-2">Icon</label>
+                                                        </li>
+                                                        <li>
+                                                            <input id="a-10" class="form-check-input" name="a-10" type="checkbox">
+                                                            <label for="a-10" class="form-check-label ms-2">Wi-Fi</label>
+                                                        </li>
+                                                        <li>
+                                                            <input id="a-11" class="form-check-input" name="a-11" type="checkbox">
+                                                            <label for="a-11" class="form-check-label ms-2">Beach</label>
+                                                        </li>
+                                                        <li>
+                                                            <input id="a-12" class="form-check-input" name="a-12" type="checkbox">
+                                                            <label for="a-12" class="form-check-label ms-2">Parking</label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-submit">	
+                                    <h3>Contact Information</h3>
+                                    <div class="submit-section">
+                                        <div class="row">
+                                        
+                                            <div class="form-group col-md-4">
+                                                <label class="mb-2">Name</label>
+                                                <input type="text" class="form-control ps-2">
+                                            </div>
+                                            
+                                            <div class="form-group col-md-4">
+                                                <label class="mb-2">Email</label>
+                                                <input type="text" class="form-control ps-2">
+                                            </div>
+                                            
+                                            <div class="form-group col-md-4">
+                                                <label class="mb-2">Phone (optional)</label>
+                                                <input type="text" class="form-control ps-2">
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group col-lg-12 col-md-12">
+                                    <label>GDPR Agreement *</label>
+                                    <ul class="no-ul-list">
+                                        <li>
+                                            <input id="aj-1" class="form-check-input" name="aj-1" type="checkbox">
+                                            <label for="aj-1" class="form-check-label ms-2">I consent to having this website store my submitted information so they can respond to my inquiry.</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="form-group col-lg-12 col-md-12">
+                                    <button class="btn btn-primary px-5 rounded" type="submit">Submit & Preview</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer-top [bg]="'theme-bg'"/>
+
+<app-footer/>

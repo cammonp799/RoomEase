@@ -1,0 +1,44 @@
+<app-navbar/>
+
+<section class="bg-title">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-11 col-md-12">
+                <div class="property_block_wrap style-4">
+                    <div class="prt-detail-title-desc">
+                        <span class="label text-light bg-warning mb-1 d-inline-flex">For Sale</span>
+                        <h3 class="text-light mt-3">{{data?.name ? data?.name : 'Jannat Graynight Mood In Siver Colony, London'}}</h3>
+                        <span><i class="lni-map-marker"></i> 778 Country St. Panama City, FL</span>
+                        <h3 class="prt-price-fix text-light pt-2 pb-1">$7,600<sub>/month</sub></h3>
+                        <div class="pbwts-social">
+                            <ul>
+                                <li>Share:</li>
+                                <li><a [routerLink]="[]"><i class="fa-brands fa-facebook"></i></a></li>
+                                <li><a [routerLink]="[]"><i class="fa-brands fa-linkedin"></i></a></li>
+                                <li><a [routerLink]="[]"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a [routerLink]="[]"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>	
+        </div>
+    </div>
+</section>
+
+<section class="gray-simple">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12 col-sm-12">
+                <app-property-detail/>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <app-property-sidebar/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer-top [bg]="'theme-bg'"/>
+
+<app-footer/>

@@ -1,0 +1,61 @@
+<app-admin-navbar/>
+<div class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <h2 class="ipt-title">Welcome!</h2>
+                <span class="ipn-subtitle">Welcome To Your Account</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="bg-light">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="filter_search_opt">
+                    <a [routerLink]="[]" (click)="show = !show" class="btn btn-dark full-width mb-4">Dashboard Navigation<i class="fa-solid fa-bars ms-2"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3 col-md-12">
+                <app-admin-sidebar [show]="show"/>
+            </div>
+            <div class="col-lg-9 col-md-12">
+                <div class="dashboard-wraper">
+                    <div class="form-submit">	
+                        <h4>My Property</h4>
+                    </div>
+                    <div class="row">
+                        <div *ngFor="let item of data" class="col-md-12 col-sm-12 col-md-12">
+                            <div class="singles-dashboard-list">
+                                <div class="sd-list-left">
+                                    <img [src]="item.image" class="img-fluid" alt="" />
+                                </div>
+                                <div class="sd-list-right">
+                                    <h4 class="listing_dashboard_title"><a [routerLink]="[]" class="text-primary">{{item.name}}</a></h4>
+                                    <div class="user_dashboard_listed">Price: from $ 154 month</div>
+                                    <div class="user_dashboard_listed">Listed in <a [routerLink]="[]" class="text-primary">Rentals</a> and <a [routerLink]="[]" class="text-primary">Apartments</a></div>
+                                    <div class="user_dashboard_listed">City: <a [routerLink]="[]" class="text-primary">KASIA</a> , Area:540 sq ft </div>
+                                    <div class="action">
+                                        <a [routerLink]="[]"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <a [routerLink]="[]"><i class="fa-regular fa-eye"></i></a>
+                                        <a [routerLink]="[]"class="delete"><i class="fa-regular fa-circle-xmark"></i></a>
+                                        <a [routerLink]="[]" class="delete"><i class="fa-solid fa-star"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer-top [bg]="'theme-bg'"/>
+
+<app-footer/>
