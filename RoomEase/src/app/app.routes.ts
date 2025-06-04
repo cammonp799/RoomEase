@@ -54,9 +54,10 @@ import { FaqComponent } from './pages/faq/faq.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { CreateAccountComponent } from './pages/create-account/create-account.component';
 import { SubmitPropertyDashboardComponent } from './pages/admin/submit-property-dashboard/submit-property-dashboard.component';
+import { HomeComponent } from './pages/home/home.component';
 
 export const routes: Routes = [
-    {path:'', component:IndexOneComponent},
+    {path:'', component:HomeComponent},
     {path:'home-2', component:IndexTwoComponent},
     {path:'home-3', component:IndexThreeComponent},
     {path:'home-4', component:IndexFourComponent},

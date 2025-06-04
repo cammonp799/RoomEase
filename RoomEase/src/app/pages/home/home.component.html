@@ -1,1 +1,152 @@
-<p>home works!</p>
+<app-nav-light/>
+
+<div class="hero-banner vedio-banner">
+    <div class="overlay"></div>	
+
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="assets/img/villa.mp4" type="video/mp4">
+    </video>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 col-md-11 col-sm-12">
+                <div class="inner-banner-text text-center">
+                    <p class="lead-i text-light">Find Best Places in United States</p>
+                    <h2 class="text-light"><span class="font-normal">Find Your</span> Perfect Place.</h2>
+                </div>
+                <app-form-one/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6">
+                <img [src]="'assets/img/sb.png'" class="img-fluid" alt="" />
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="story-wrap explore-content">
+                    <h2>Our Story</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pt-0">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-10 text-center">
+                <div class="sec-heading center">
+                    <h2>Recent Property For Rent</h2>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
+                </div>
+            </div>
+        </div>
+        <app-property-slide/>
+    </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-6 col-lg-7 col-md-10 text-center">
+        <div class="sec-heading center">
+          <h2>How It Works?</h2>
+          <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
+        </div>
+      </div>
+    </div>
+    <app-how-its-work/>
+  </div>
+</section>
+<div class="clearfix"></div>
+
+<section class="gray-bg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-10 text-center">
+                <div class="sec-heading center">
+                    <h2>Good Reviews by Customers</h2>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
+                </div>
+            </div>
+        </div>
+        <app-client/>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-7">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="form-group">
+                            <label class="mb-4">Name</label>
+                            <input type="text" class="form-control simple ps-2">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="form-group">
+                            <label class="mb-4">Email</label>
+                            <input type="email" class="form-control simple ps-2">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="mb-4">Subject</label>
+                    <input type="text" class="form-control simple ps-2">
+                </div>
+                
+                <div class="form-group">
+                    <label class="mb-4">Message</label>
+                    <textarea class="form-control simple ps-2 pt-3"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <button class="btn btn-primary px-5 rounded" type="submit">Submit Request</button>
+                </div>
+            </div>
+            
+            <div class="col-lg-5 col-md-5">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                    <div class="cn-info-detail mt-4">
+                        <div class="cn-info-icon">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+                        <div class="cn-info-content">
+                            <h4 class="cn-info-title">Reach Us</h4>++2512, New Market,<br>Eliza Road, Sincher 80 CA,<br>Canada, USA
+                        </div>
+                    </div>
+                    
+                    <div class="cn-info-detail mt-4">
+                        <div class="cn-info-icon">
+                            <i class="fa-solid fa-envelope-circle-check"></i>
+                        </div>
+                        <div class="cn-info-content">
+                            <h4 class="cn-info-title">Drop A Mail</h4>support&#64;Rikada.com<br>Rikada&#64;gmail.com
+                        </div>
+                    </div>
+                    
+                    <div class="cn-info-detail mt-4">
+                        <div class="cn-info-icon">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </div>
+                        <div class="cn-info-content">
+                            <h4 class="cn-info-title">Call Us</h4>(41) 123 521 458<br>+91 235 548 7548
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer/>
