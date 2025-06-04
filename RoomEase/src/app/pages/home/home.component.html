@@ -3,8 +3,8 @@
 <div class="hero-banner vedio-banner">
     <div class="overlay"></div>	
 
-    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-        <source src="assets/img/villa.mp4" type="video/mp4">
+    <video #backgroundVideo playsinline autoplay muted loop [src]="videoSrc">
+        Votre navigateur ne prend pas en charge les vidéos HTML5.
     </video>
     <div class="container">
         <div class="row justify-content-center">
@@ -64,6 +64,20 @@
   </div>
 </section>
 <div class="clearfix"></div>
+
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 col-md-10 text-center">
+                <div class="sec-heading center mb-4">
+                    <h2>Achievement</h2>
+                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores</p>
+                </div>
+            </div>
+        </div>
+        <app-achievement/>
+    </div>
+</section>
 
 <section class="gray-bg">
     <div class="container">
