@@ -1,0 +1,4 @@
+# Fichiers d’environnement
+.env.development
+.env.staging
+.env.production
