@@ -11,7 +11,7 @@ RoomEase/
 │   ├─ e2e/             # Tests end-to-end avec Playwright/Cypress
 │   ├─ Dockerfile       # Image Docker du frontend
 │   └─ package.json     # Dépendances et scripts npm
-├─ backend/             # API (Node.js/NestJS ou autre)
+├─ backend/             # API (Node.js)
 │   ├─ Dockerfile       # Image Docker du backend
 │   ├─ .env.*           # Variables d’environnement par environnement
 ├─ .github/workflows/   # CI/CD avec GitHub Actions
@@ -21,7 +21,7 @@ RoomEase/
 │   ├─ terraform/       # Provisionnement cloud
 │   └─ k8s/             # Déploiement Kubernetes
 ├─ docs/                # Documentation du projet
-│   ├─ architecture.md  # Présente l'architecture logicielle (ce fichier)
+│   ├─ architecture.md  # Présente l'architecture logicielle 
 │   └─ api_spec.md      # Spécifications de l'API
 ├─ docker-compose.yml   # Déploiement local multi-services
 └─ README.md            # Présentation générale
