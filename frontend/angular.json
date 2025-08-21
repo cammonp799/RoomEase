@@ -27,9 +27,17 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/leaflet/dist/images",
+                "output": "assets/leaflet/"
               }
             ],
             "styles": [
+              "node_modules/leaflet/dist/leaflet.css",
+              "node_modules/slick-carousel/slick/slick.css",
+              "node_modules/slick-carousel/slick/slick-theme.css",
               "src/styles.scss"
             ],
             "server": "src/main.server.ts",
@@ -90,14 +98,25 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/leaflet/dist/images",
+                "output": "assets/leaflet/"
               }
             ],
             "styles": [
+              "node_modules/leaflet/dist/leaflet.css",
+              "node_modules/slick-carousel/slick/slick.css",
+              "node_modules/slick-carousel/slick/slick-theme.css",
               "src/styles.scss"
             ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "0fdfbeab-6ee8-46c6-9560-a3bec3dda41c"
   }
 }
