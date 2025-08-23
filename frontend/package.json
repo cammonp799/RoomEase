@@ -1,5 +1,5 @@
 {
-  "name": "RoomEase-FrontEnd",
+  "name": "roomease",
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,6 +7,7 @@
     "build": "ng build --configuration=production",
     "watch": "ng build --watch --configuration development",
     "test": "jest",
+    "test:ci": "jest --runInBand",
     "serve:ssr:frontend": "node dist/frontend/server/server.mjs"
   },
   "prettier": {
@@ -41,10 +42,13 @@
     "@angular/cli": "^20.2.0",
     "@angular/compiler-cli": "^20.2.1",
     "@types/express": "^5.0.1",
+    "@types/jest": "^30.0.0",
     "@types/leaflet": "^1.9.20",
     "@types/node": "^20.17.19",
     "autoprefixer": "^10.4.21",
     "jasmine-core": "~5.7.0",
+    "jest": "^30.0.5",
+    "jest-preset-angular": "^15.0.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
