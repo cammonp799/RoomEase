@@ -1,0 +1,42 @@
+{
+  "name": "roomease-api",
+  "version": "1.0.0",
+  "description": "API REST pour l'authentification et la gestion des utilisateurs de RoomEase",
+  "main": "index.js",
+  "private": true,
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "lint": "eslint **/*.js",
+    "pretest": "npm run lint",
+    "test": "echo \"No tests yet\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ton-repo/roomease-api.git"
+  },
+  "keywords": [
+    "express",
+    "api",
+    "mysql2",
+    "room-ease",
+    "auth"
+  ],
+  "author": "Ton Nom <ton.email@example.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mysql2": "^3.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.41.0",
+    "nodemon": "^2.0.20"
+  }
+}
