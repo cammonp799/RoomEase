@@ -4,18 +4,16 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration=production",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
+    "test": "jest",
     "serve:ssr:frontend": "node dist/frontend/server/server.mjs"
   },
   "prettier": {
     "overrides": [
       {
         "files": "*.html",
-        "options": {
-          "parser": "angular"
-        }
+        "options": { "parser": "angular" }
       }
     ]
   },
@@ -41,7 +39,6 @@
     "@angular/cli": "^20.2.0",
     "@angular/compiler-cli": "^20.0.0",
     "@types/express": "^5.0.1",
-    "@types/jasmine": "~5.1.0",
     "@types/leaflet": "^1.9.20",
     "@types/node": "^20.17.19",
     "autoprefixer": "^10.4.21",
