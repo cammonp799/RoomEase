@@ -17,7 +17,6 @@ app.use(cors({
 app.use(express.json());
 
 // Routes
-debugger;
 app.use('/api/auth', authRoutes);
 
 // Health check
@@ -27,5 +26,4 @@ app.get('/api/health', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
-
 });
