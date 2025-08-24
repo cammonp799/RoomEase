@@ -13,6 +13,7 @@ app.use(cors({
   allowedHeaders: ['Content-Type','Authorization']
 }));
 
+
 app.use(express.json());
 
 // Routes
@@ -26,4 +27,5 @@ app.get('/api/health', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
+
 });
