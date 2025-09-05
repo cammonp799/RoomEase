@@ -1,0 +1,25 @@
+<div class="row justify-content-center">
+    <div class="col-lg-12 col-md-12">
+        <div class="smart-textimonials smart-center" id="smart-textimonials">
+            <div *ngFor="let item of clientData" class="item">
+                <div class="item-box">
+                    <div class="smart-tes-author">
+                        <div class="st-author-box">
+                            <div class="st-author-thumb">
+                                <div class="quotes" [ngClass]="item.quote"><i class="fa-solid fa-quote-left"></i></div>
+                                <img [src]="item.image" class="img-fluid" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="smart-tes-content">
+                        <p>{{item.desc}}</p>
+                    </div>
+                    <div class="st-author-info">
+                        <h4 class="st-author-title">{{item.name}}</h4>
+                        <span class="st-author-subtitle">{{item.position}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

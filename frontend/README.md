@@ -1,6 +1,13 @@
-# Frontend
+# RoomEase
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.4.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.12.
+
+Penser à faire pour init :
+
+
+```bash
+npm install --legacy-peer-deps
+```
 
 ## Development server
 
@@ -17,7 +24,7 @@ Once the server is running, open your browser and navigate to `http://localhost:
 Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
 ```bash
-ng generate components components-name
+ng generate component component-name
 ```
 
 For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:

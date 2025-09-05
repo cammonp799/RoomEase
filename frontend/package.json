@@ -1,61 +1,49 @@
 {
-  "name": "roomease",
+  "name": "resido",
   "version": "1.0.0",
+  "description": "Room Ease - Angular Js Real Estate Template",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --configuration=production",
+    "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "jest",
-    "test:ci": "jest --runInBand",
-    "serve:ssr:frontend": "node dist/frontend/server/server.mjs"
-  },
-  "prettier": {
-    "overrides": [
-      {
-        "files": "*.html",
-        "options": {
-          "parser": "angular"
-        }
-      }
-    ]
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
-    "@angular/common": "^20.2.1",
-    "@angular/compiler": "^20.2.1",
-    "@angular/core": "^20.2.1",
-    "@angular/forms": "^20.2.1",
-    "@angular/platform-browser": "^20.2.1",
-    "@angular/platform-server": "^20.2.1",
-    "@angular/router": "^20.2.1",
-    "@angular/ssr": "^20.0.4",
-    "express": "^5.1.0",
+    "@angular-slider/ngx-slider": "^18.0.0",
+    "@angular/animations": "^19.0.0",
+    "@angular/cdk": "^19.2.16",
+    "@angular/common": "^19.0.0",
+    "@angular/compiler": "^19.0.0",
+    "@angular/core": "^19.0.0",
+    "@angular/forms": "^19.0.0",
+    "@angular/google-maps": "^19.0.3",
+    "@angular/platform-browser": "^19.0.0",
+    "@angular/platform-browser-dynamic": "^19.0.0",
+    "@angular/router": "^19.0.0",
+    "@types/leaflet": "^1.9.15",
     "leaflet": "^1.9.4",
+    "ng-multiselect-dropdown": "^1.0.0",
+    "ng-select2-component": "^16.0.0",
+    "ngx-countup": "^13.2.0",
+    "ngx-slick-carousel": "^17.0.0",
+    "ngx-slider": "^0.0.5",
     "rxjs": "~7.8.0",
-    "slick-carousel": "^1.8.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular/build": "^20.2.0",
-    "@angular/cli": "^20.2.0",
-    "@angular/compiler-cli": "^20.2.1",
-    "@types/express": "^5.0.1",
-    "@types/jest": "^30.0.0",
-    "@types/leaflet": "^1.9.20",
-    "@types/node": "^20.17.19",
-    "autoprefixer": "^10.4.21",
-    "jasmine-core": "~5.7.0",
-    "jest": "^30.0.5",
-    "jest-preset-angular": "^15.0.0",
+    "@angular-devkit/build-angular": "^19.0.4",
+    "@angular/cli": "^19.0.4",
+    "@angular/compiler-cli": "^19.0.0",
+    "@types/jasmine": "~5.1.0",
+    "jasmine-core": "~5.4.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.17",
-    "typescript": "~5.9"
+    "typescript": "~5.6.2"
   }
 }

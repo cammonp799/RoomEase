@@ -1,0 +1,84 @@
+<app-navbar></app-navbar>
+
+<div class="page-title" style="background-color:#ec919c;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12">
+        <h2 class="ipt-title">Créer un compte</h2>
+        <span class="ipn-subtitle">Inscrivez-vous sur Room Ease aujourd'hui</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="gray-simple">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-7 col-lg-8 col-md-9">
+        <div class="card border-0 rounded-4 p-xl-4 p-lg-4 p-md-4 p-3">
+          <div class="simple-form">
+
+            <!-- En-tête avec logo et texte -->
+            <div class="form-header text-center mb-5">
+              <div class="effco-logo mb-2">
+                <a class="d-flex align-items-center justify-content-center" [routerLink]="'/'">
+                  <span class="svg-icon text-primary svg-icon-2hx">
+                    <object type="image/svg+xml" data="assets/img/logo.svg" width="80"></object>
+                  </span>
+                </a>
+              </div>
+              <h4 class="fs-2">Créer un compte sur RoomEase</h4>
+            </div>
+
+            <!-- Formulaire réactif -->
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 mb-3">
+                  <label class="mb-2">Nom</label>
+                  <input formControlName="nom" type="text" class="form-control ps-2" placeholder="Nom">
+                </div>
+                <div class="col-lg-6 col-md-6 mb-3">
+                  <label class="mb-2">Prénom</label>
+                  <input formControlName="prenom" type="text" class="form-control ps-2" placeholder="Prénom">
+                </div>
+                <div class="col-lg-6 col-md-6 mb-3">
+                  <label class="mb-2">Email</label>
+                  <input formControlName="email" type="email" class="form-control ps-2" placeholder="Email">
+                </div>
+                <div class="col-lg-6 col-md-6 mb-3">
+                  <label class="mb-2">Mot de passe</label>
+                  <input formControlName="mdp" type="password" class="form-control ps-2" placeholder="*******">
+                </div>
+                <div class="col-lg-6 col-md-6 mb-3">
+                  <label class="mb-2">Téléphone</label>
+                  <input formControlName="telephone" type="tel" class="form-control ps-2" placeholder="123 546 5847">
+                </div>
+                <div class="col-lg-6 col-md-6 mb-3">
+                  <label class="mb-2">Date de naissance</label>
+                  <input formControlName="dateNaissance" type="date" class="form-control ps-2" placeholder="Date de naissance" required>
+                </div>
+              </div>
+
+              <div *ngIf="errorMessage" class="alert alert-danger">
+                {{ errorMessage }}
+              </div>
+
+              <div class="form-group">
+                <button type="submit"
+                        class="btn full-width fw-medium"
+                        [disabled]="loading"
+                        style="background-color:#E4A8AF; color:white;">
+                  {{ loading ? 'Création...' : 'Créer un compte' }}
+                  <i class="fa-solid fa-arrow-right-long ms-2"></i>
+                </button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

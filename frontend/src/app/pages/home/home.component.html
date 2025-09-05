@@ -1,0 +1,185 @@
+<app-nav-light></app-nav-light>
+
+<div class="hero-banner vedio-banner">
+    <div class="overlay"></div>	
+
+    <video #backgroundVideo playsinline autoplay muted loop [src]="videoSrc">
+        Votre navigateur ne prend pas en charge les vidéos HTML5.
+    </video>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 col-md-11 col-sm-12">
+                <div class="inner-banner-text text-center">
+                    <p class="lead-i text-light">Colocation de prestige entre particuliers</p>
+                    <h2 class="text-light"><span class="font-normal">Vivez la</span> colocation de luxe.</h2>
+                    <p class="text-light mb-4">Conçue par Junior Chimene &amp; Lucas Madjinda</p>
+                </div>
+                <app-form-one/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 col-md-6">
+        <img [src]="'assets/img/sb.png'" class="img-fluid" alt="Intérieur moderne RoomEase"/>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <div class="story-wrap explore-content">
+          <h2 style="text-decoration: underline solid #E4A8AF 8px;">Notre Histoire</h2>
+          <p>
+            RoomEase est né de la vision commune de deux passionnés d’immobilier : Junior Chimene et Lucas Madjinda. Ensemble, ils ont voulu réinventer la colocation en proposant des espaces partagés haut de gamme, mêlant design, confort et convivialité.
+          </p>
+          <p>
+            Chaque logement est sélectionné avec soin : emplacements privilégiés, finitions soignées, services exclusifs. Chez RoomEase, la colocation devient un art de vivre, où chaque détail compte pour offrir une expérience unique.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pt-0">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-md-10 text-center">
+        <div class="sec-heading center">
+          <h2 style="text-decoration: underline solid #E4A8AF 8px;">Nos dernières offres</h2>
+          <p>
+            Découvrez nos annonces de colocation de luxe, avec des chambres élégantes et des espaces communs raffinés. Saisissez l’opportunité de vivre autrement.
+          </p>
+        </div>
+      </div>
+    </div>
+    <app-property-slide></app-property-slide>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-6 col-lg-7 col-md-10 text-center">
+        <div class="sec-heading center">
+          <h2 style="text-decoration: underline solid #E4A8AF 8px;">Comment ça marche ?</h2>
+          <p>
+            Quelques étapes simples pour trouver votre future colocation de rêve avec RoomEase.
+          </p>
+        </div>
+      </div>
+    </div>
+    <app-how-its-work></app-how-its-work>
+  </div>
+</section>
+<div class="clearfix"></div>
+
+<section style="background-color:#ec919c;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-md-10 text-center">
+        <div class="sec-heading center mb-4">
+          <h2 class="text-white">Nos Engagements</h2>
+          <p class="text-white">
+            Qualité, transparence et service sur-mesure : notre promesse pour une colocation sereine et élégante.
+          </p>
+        </div>
+      </div>
+    </div>
+    <app-achievement></app-achievement>
+  </div>
+</section>
+
+<section class="gray-bg">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-md-10 text-center">
+        <div class="sec-heading center">
+          <h2>Ils nous font confiance</h2>
+          <p>
+            Découvrez les témoignages de nos colocataires qui ont choisi l’excellence avec RoomEase.
+          </p>
+        </div>
+      </div>
+    </div>
+    <app-client></app-client>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7 col-md-7">
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <div class="form-group">
+              <label class="mb-4">Nom</label>
+              <input type="text" class="form-control simple ps-2" placeholder="Votre nom"/>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="form-group">
+              <label class="mb-4">Email</label>
+              <input type="email" class="form-control simple ps-2" placeholder="Votre email"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="mb-4">Objet</label>
+          <input type="text" class="form-control simple ps-2" placeholder="Objet de votre message"/>
+        </div>
+
+        <div class="form-group">
+          <label class="mb-4">Message</label>
+          <textarea class="form-control simple ps-2 pt-3" placeholder="Votre message"></textarea>
+        </div>
+
+        <div class="form-group">
+          <button class="btn  px-5 rounded" type="submit" style="background-color: #E4A8AF;color: white;">Envoyer la demande</button>
+        </div>
+      </div>
+
+      <div class="col-lg-5 col-md-5">
+        <div class="contact-info">
+          <h2>Contactez-nous</h2>
+          <p>
+            Pour toute question ou visite, notre équipe est à votre écoute.
+          </p>
+          <div class="cn-info-detail mt-4">
+            <div class="cn-info-icon">
+              <i class="fa-solid fa-house" style="color: #E4A8AF;"></i>
+            </div>
+            <div class="cn-info-content">
+              <h4 class="cn-info-title">Adresse</h4>
+              12 Rue des Colocs,<br/>
+              75001 Paris, France
+            </div>
+          </div>
+
+          <div class="cn-info-detail mt-4">
+            <div class="cn-info-icon">
+              <i class="fa-solid fa-envelope-circle-check" style="color: #E4A8AF;"></i>
+            </div>
+            <div class="cn-info-content">
+              <h4 class="cn-info-title">Email</h4>
+              contact&#64;roomease.com
+            </div>
+          </div>
+
+          <div class="cn-info-detail mt-4">
+            <div class="cn-info-icon">
+              <i class="fa-solid fa-phone-volume" style="color: #E4A8AF;"></i>
+            </div>
+            <div class="cn-info-content">
+              <h4 class="cn-info-title">Téléphone</h4>
+              +33 1 23 45 67 89
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer></app-footer>

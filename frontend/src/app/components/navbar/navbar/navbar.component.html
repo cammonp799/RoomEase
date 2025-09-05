@@ -1,0 +1,227 @@
+<div class="header" [ngClass]="{'header-fixed': scroll, 'header-transparent dark': transparent,'header-light head-shadow': !transparent}">
+    <div class="container">
+        <nav id="navigation" class="navigation" [ngClass]="windowWidth > 991 ? 'navigation navigation-landscape' : 'navigation navigation-portrait'">
+            <div class="nav-header">
+                <a class="nav-brand text-logo d-flex h-11 items-center" [routerLink]="['/']" (click)="toggle = false">
+                    <img [src]="'/assets/img/Logo-Digidop-Blanc.png'" alt="">
+                    <!-- <h5 class="fs-3 fw-bold ms-1 my-0">RoomEase</h5> -->
+                </a>
+                <div class="nav-toggle" (click)="toggle = !toggle"></div>
+                <div class="mobile_nav">
+                    <ul>
+                        <li>
+                            <a [routerLink]="[]" data-bs-toggle="modal" data-bs-target="#login" class="text-dark opacity-75">
+                                <img [src]="['/assets/img/svg/users.svg']" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/submit-property']" class="text-primary">
+                                <img [src]="'/assets/img/svg/add.svg'" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="[]" class="text-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                               <img [src]="'/assets/img/svg/bar.svg'" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nav-menus-wrapper nav-menus-wrapper-open" [ngClass]="{ 'nav-menus-wrapper-open': toggle}" [ngStyle]="{'transition-property': toggle ? 'none' : 'left'}">
+                <span class="nav-menus-wrapper-close-button" (click)="toggle = !toggle">✕</span>
+                <ul class="nav-menu">
+                    <li><a [routerLink]="['/']" [ngClass]="{ 'active': current === '/' }">Accueil</a></li>
+                    <li><a [routerLink]="['/grid-layout-with-sidebar']" [ngClass]="{ 'active': current === '/grid-layout-with-sidebar' }">Louer</a></li>
+                    <li><a [routerLink]="['/']" [ngClass]="{ 'active': current === '/' }">A Propos</a></li>
+                    <li><a [routerLink]="['/']" [ngClass]="{ 'active': current === '/' }">FAQ</a></li>
+                    <li><a [routerLink]="['/']" [ngClass]="{ 'active': current === '/' }">Contact</a></li>
+                </ul>
+                
+                <ul class="nav-menu nav-menu-social align-to-right">
+                    
+                     <!-- Quand l’utilisateur n’est pas connecté -->
+                    <li *ngIf="!isLoggedIn">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#login" class="fw-medium text-dark">
+                        <span class="svg-icon svg-icon-2hx me-1">
+                            <svg width="22" height="22" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.3" d="M16.5 9C16.5 13.125 13.125 16.5 9 16.5C4.875 16.5 1.5 13.125 1.5 9C1.5 4.875 4.875 1.5 9 1.5C13.125 1.5 16.5 4.875 16.5 9Z" fill="currentColor"/>
+                                    <path d="M9 16.5C10.95 16.5 12.75 15.75 14.025 14.55C13.425 12.675 11.4 11.25 9 11.25C6.6 11.25 4.57499 12.675 3.97499 14.55C5.24999 15.75 7.05 16.5 9 16.5Z" fill="currentColor"/>
+                                    <rect x="7" y="6" width="4" height="4" rx="2" fill="currentColor"/>
+                            </svg>
+                        </span>
+                        Connexion ou Inscription
+                        </a>
+                    </li>
+
+                    <!-- Quand il est connecté : bouton Déconnexion -->
+                    <li *ngIf="isLoggedIn">
+                        <button (click)="onLogout()"
+                                class="btn btn-sm"
+                                style="background-color:#d9534f; color:white;">
+                        Déconnexion
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="registermodal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered login-pop-form" role="document">
+        <div class="modal-content" id="registermodal">
+            <span class="mod-close" data-bs-dismiss="modal" aria-hidden="true">
+                <span class="svg-icon text-primary svg-icon-2hx">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
+                        <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor"/>
+                        <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor"/>
+                    </svg>
+                </span>
+            </span>
+            <div class="modal-body">
+                <h4 class="modal-header-title" >Connexion</h4>
+                <div class="d-flex align-items-center justify-content-center mb-3">
+                    <span class="svg-icon text-primary svg-icon-2hx">
+                        <object type="image/svg+xml" data="assets/img/logo.svg" width="80"></object>
+                        <!-- <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.8797 15.375C15.9797 15.075 15.9797 14.775 15.9797 14.475C15.9797 13.775 15.7797 13.075 15.4797 12.475C14.7797 11.275 13.4797 10.475 11.9797 10.475C11.7797 10.475 11.5797 10.475 11.3797 10.575C7.37971 11.075 4.67971 14.575 2.57971 18.075L10.8797 3.675C11.3797 2.775 12.5797 2.775 13.0797 3.675C13.1797 3.875 13.2797 3.975 13.3797 4.175C15.2797 7.575 16.9797 11.675 15.8797 15.375Z" fill="currentColor"/>
+                            <path opacity="0.3" d="M20.6797 20.6749C16.7797 20.6749 12.3797 20.275 9.57972 17.575C10.2797 18.075 11.0797 18.375 11.9797 18.375C13.4797 18.375 14.7797 17.5749 15.4797 16.2749C15.6797 15.9749 15.7797 15.675 15.7797 15.375V15.2749C16.8797 11.5749 15.2797 7.47495 13.2797 4.07495L21.6797 18.6749C22.2797 19.5749 21.6797 20.6749 20.6797 20.6749ZM8.67972 18.6749C8.17972 17.8749 7.97972 16.975 7.77972 15.975C7.37972 13.575 8.67972 10.775 11.3797 10.375C7.37972 10.875 4.67972 14.375 2.57972 17.875C2.47972 18.075 2.27972 18.375 2.17972 18.575C1.67972 19.475 2.27972 20.475 3.27972 20.475H10.3797C9.67972 20.175 9.07972 19.3749 8.67972 18.6749Z" fill="currentColor"/>
+                        </svg> -->
+                    </span>
+                </div>
+                <div class="login-form">
+                    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+
+                        <div class="form-floating mb-3">
+                        <input
+                            formControlName="email"
+                            type="email"
+                            class="form-control"
+                            placeholder="name@example.com">
+                        <label>Email</label>
+                        <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid" class="text-danger small">
+                            <div *ngIf="loginForm.get('email')?.hasError('required')">L’email est requis.</div>
+                            <div *ngIf="loginForm.get('email')?.hasError('email')">Email invalide.</div>
+                        </div>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                        <input
+                            formControlName="mdp"
+                            type="password"
+                            class="form-control"
+                            placeholder="Password">
+                        <label>Mot de passe</label>
+                        <div *ngIf="loginForm.get('mdp')?.touched && loginForm.get('mdp')?.invalid" class="text-danger small">
+                            Le mot de passe est requis.
+                        </div>
+                        </div>
+
+                        <div *ngIf="loginError" class="alert alert-danger">
+                        {{ loginError }}
+                        </div>
+
+                        <div class="form-group mb-3">
+                        <button
+                            type="submit"
+                            [disabled]="loginForm.invalid"
+                            class="btn btn-lg fw-medium full-width rounded-2"
+                            style="background-color:#E4A8AF; color:white;">
+                            Connexion
+                        </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="text-center">
+                    <p class="mt-4">Vous n'avez pas de compte? <a [routerLink]="['/create-account']" class="link fw-medium">Créer un compte</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Comparer & Propriétés Sélectionnées</h5>
+        <a [routerLink]="[]" data-bs-dismiss="offcanvas" aria-label="Close">
+            <span class="svg-icon text-primary svg-icon-2hx">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
+                    <rect x="7" y="15.3137" width="12" height="2" rx="1" transform="rotate(-45 7 15.3137)" fill="currentColor"/>
+                    <rect x="8.41422" y="7" width="12" height="2" rx="1" transform="rotate(45 8.41422 7)" fill="currentColor"/>
+                </svg>
+            </span>
+        </a>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="nav nav-pills sider_tab mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-compare-tab" data-bs-toggle="pill" data-bs-target="#pills-compare" type="button" role="tab" aria-controls="pills-compare" aria-selected="true">Comparer les Propriétés</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-saved-tab" data-bs-toggle="pill" data-bs-target="#pills-saved" type="button" role="tab" aria-controls="pills-saved" aria-selected="false">Propriétés Enregistrées</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-compare" role="tabpanel" aria-labelledby="pills-compare-tab" tabindex="0">
+                <div class="sidebar_featured_property">
+                            
+                    <div *ngFor="let item of data1" class="sides_list_property p-2">
+                        <div class="sides_list_property_thumb">
+                            <img [src]="item.image" class="img-fluid" alt="">
+                        </div>
+                        <div class="sides_list_property_detail">
+                            <h4><a [routerLink]="['/single-property-1']">{{item.name}}</a></h4>
+                            <span class="text-muted-2"><i class="fa-solid fa-location-dot"></i>{{item.loction}}</span>
+                            <div class="lists_property_price">
+                                <div class="lists_property_types">
+                                    <div *ngIf="item.type === 'For Sale'" class="property_types_vlix sale">For Sale</div>
+                                    <div *ngIf="item.type === 'For Rent'" class="property_types_vlix">For Rent</div>
+                                    <div *ngIf="item.type === 'For Buy'" class="property_types_vlix buy">For Buy</div>
+                                </div>
+                                <div class="lists_property_price_value">
+                                    <h4 class="text-primary">{{item.value}}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <a [routerLink]="['/compare-property']" class="btn btn-light-primary fw-medium full-width">View & Compare</a>
+                    </div>
+                </div>	
+            </div>
+            <div class="tab-pane fade" id="pills-saved" role="tabpanel" aria-labelledby="pills-saved-tab" tabindex="0">
+                <div class="sidebar_featured_property">
+                            
+                    <div *ngFor="let item of data2" class="sides_list_property p-2">
+                        <div class="sides_list_property_thumb">
+                            <img [src]="item.image" class="img-fluid" alt="">
+                        </div>
+                        <div class="sides_list_property_detail">
+                            <h4><a [routerLink]="['/single-property-1']">{{item.name}}</a></h4>
+                            <span class="text-muted-2"><i class="fa-solid fa-location-dot"></i>{{item.loction}}</span>
+                            <div class="lists_property_price">
+                                <div class="lists_property_types">
+                                    <div *ngIf="item.type === 'For Sale'" class="property_types_vlix sale">For Sale</div>
+                                    <div *ngIf="item.type === 'For Rent'" class="property_types_vlix">For Rent</div>
+                                    <div *ngIf="item.type === 'For Buy'" class="property_types_vlix buy">For Buy</div>
+                                </div>
+                                <div class="lists_property_price_value">
+                                    <h4 class="text-primary">{{item.value}}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <a [routerLink]="[]" class="btn btn-light-primary fw-medium full-width">View & Compare</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
